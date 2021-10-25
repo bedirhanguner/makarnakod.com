@@ -1,10 +1,11 @@
-const http = require('http')
-
-const app = http.createServer((request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.end('Hello World')
-})
-
-const PORT = 3001
-app.listen(PORT)
-console.log(`Server running on port ${PORT}`)
+const express = require("express");
+const app = express();
+  
+app.post("/post", (req, res) => {
+  console.log("Connected to React");
+  res.redirect("/");
+});
+  
+const PORT = process.env.PORT || 8080;
+  
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
