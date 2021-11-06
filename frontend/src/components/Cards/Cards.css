@@ -1,0 +1,141 @@
+  .cards {
+    background:rgb(38, 43, 49);
+    overflow: auto;
+    padding-bottom: 200px;
+  }
+
+
+  .info {
+    background: rgb(55, 62, 70);
+    padding-top: 1vw;
+    padding-left: 10vw;
+    height: 120px;
+    display: relative;
+    font-size: 1.2rem;
+    top: 0;
+    z-index: 999;
+    color: rgb(246, 242, 239);
+  }
+  
+  .subjectSelectors{
+    display: relative;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    float: left;
+    padding:2rem 0rem 2rem 9rem;
+  }
+
+  input{
+    display: relative;
+    background-color: transparent;
+    color: rgb(246, 242, 239);
+    padding: 8px 20px;
+    border: 1px solid rgb(246, 242, 239);
+    transition: all 0.3s ease-out;
+    font-size:18px;
+    border-radius: 50px;
+    margin-left: 1rem;
+  }
+
+  .horizontal{
+    display: absolute;
+    padding-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .cards__container {
+    display: relative;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 75%;
+    float: left;
+    padding-left:9rem;
+  }
+  
+
+  .options__container {
+    display: relative;
+    flex-flow: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 25%;
+    float: right;
+  }
+  
+  .options__wrapper {
+    position: relative;
+    margin: 50px 0 45px;
+  }
+
+  .options__items{
+    color: rgb(246, 242, 239);
+  }
+  
+  .cards__items {
+    margin-bottom: 24px;
+  }
+  
+  .cards__item {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    background-color: rgb(246, 242, 239);
+  }
+
+  .cards__item:hover {
+    display: flex;
+    flex: 1;
+    margin: 0 1rem;
+    background-color: rgb(240, 234, 230);
+    border: 1px solid rgb(207, 201, 198)
+  }
+  
+  .cards__item__link {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    /*box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));*/
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  .label{
+    position: absolute;
+    overflow: hidden;
+    font-weight: 700;
+    box-sizing: border-box;
+  }
+  
+  .cards__item__info {
+    padding: 20px 30px 30px;
+  }
+  
+  .cards__item__text {
+    color: #252e48;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .content__blog__container {
+      width: 84%;
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    .cards__items {
+      display: relative;
+    }
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .cards__item {
+      margin-bottom: 2rem;
+    }
+  }
