@@ -6,10 +6,11 @@ function CardItem(props) {
     <>
       <li className='cards__item'>
         <Link className='cards__item__link' to={props.path}>
-          
           <div className='cards__item__info'>
-            <h2 className='cards__item__text'>{props.text}</h2>
-            <h5 className='label'>{props.label}</h5>
+            <div className='cards__item__text'><h4>{props.text}</h4></div>
+            <div className='cards__item__level'><h5>{props.level}</h5></div>
+            <div className='cards__item__difficulty'><h5>{props.difficulty}</h5></div>
+            <div className='cards__item__acceptance'><h5>{props.acceptance}</h5></div>
           </div>
         </Link>
       </li>

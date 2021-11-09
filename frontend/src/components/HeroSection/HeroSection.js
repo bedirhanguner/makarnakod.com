@@ -8,8 +8,8 @@ function HeroSection() {
   return (
     <div className='hero-container'>
       <img src='../images/home2.png' alt='home'/>
-      <h1>makarnakod.com</h1>
-      <p>kodlamaya başla</p>
+      <h1 className='container-header'>makarnakod.com</h1>
+      <p className='container-explanation'>kodlamaya başla</p>
       <div className='hero-btns'>
       <Link to='navbar' spy={true} smooth={true}>
         <Button
@@ -17,7 +17,6 @@ function HeroSection() {
           buttonStyle='btn--outline--black'
           buttonSize='btn--large'
         >
-          
           <i className='fas fa-angle-down' />
         </Button>
         </Link>

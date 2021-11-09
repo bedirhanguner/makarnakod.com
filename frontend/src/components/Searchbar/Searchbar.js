@@ -28,7 +28,7 @@ export const Searchbar = ({
              </button>
          </Link>*/
 
-        <input clasName='primary' type="text" placeholder="sorularda ara..." name="search"></input>
+        <input className='primary' type="text" placeholder="sorularda ara..." name="search"></input>
     )
 }
 

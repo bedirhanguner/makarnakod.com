@@ -5,6 +5,7 @@
     padding: 8px 20px;
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
+    font-size:18px;
     border-radius: 50px;
     margin-left: 1rem;
   }

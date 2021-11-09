@@ -31,7 +31,7 @@
     border: 1px solid var(--secondary);
     transition: all 0.3s ease-out;
   }
-
+ 
   .btn--rounded{
     background-color: transparent;
     color: var(--primary);
@@ -58,4 +58,12 @@
     background: var(--primary);
     color: var(--secondary);
     transition: 250ms;
+  }
+
+  .btn--outline--black:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 8px 20px;
+    border: 1px solid var(--secondary);
+    transition: all 0.3s ease-out;
   }

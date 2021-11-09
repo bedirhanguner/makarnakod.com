@@ -30,7 +30,9 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             makarnakod
-            <i class='fab fa-accessible-icon'/>
+            <div className='logo'>
+            <i class="fas fa-fingerprint"/>
+            </div>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

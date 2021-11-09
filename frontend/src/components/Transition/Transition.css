@@ -1,0 +1,13 @@
+img {
+    object-fit: cover;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .hero-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

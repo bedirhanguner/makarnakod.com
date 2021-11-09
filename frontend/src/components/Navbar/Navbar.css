@@ -4,7 +4,6 @@
   display: flex;
   padding-left: 10vw;
   font-size: 1.5rem;
-  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -13,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
   max-width: 1500px;
 }
 
@@ -47,6 +45,9 @@
   height: 80px;
 }
 
+.logo{
+  color:#6cadd8;
+}
 .nav-links {
   color: rgb(246, 242, 239);
   display: flex;
@@ -57,8 +58,9 @@
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid rgb(246, 242, 239);
+  border-bottom: 4px solid #6cadd8;
   transition: all 0.2s ease-out;
+  color: rgb(246, 242, 239);
 }
 
 .fa-bars {
@@ -108,7 +110,6 @@
   .nav-links:hover {
     background-color: rgb(246, 242, 239);
     color: #242424;
-    border-radius: 0;
   }
 
   .navbar-logo {

@@ -53,7 +53,7 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
                 makarnakod
-                <i class='fab fa-accessible-icon'/>
+                <i class="fas fa-fingerprint"/>
             </Link>
           </div>
           <small class='website-rights'>makarnakod © 2021</small>
