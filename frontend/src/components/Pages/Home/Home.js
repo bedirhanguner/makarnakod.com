@@ -4,7 +4,7 @@ import HeroSection from '../../HeroSection/HeroSection';
 import Navbar from '../../Navbar/Navbar';
 import Cards from '../../Cards/Cards';
 import Footer from '../../Footer/Footer';
-import Transition from '../../Transition/Transition'
+//import Transition from '../../Transition/Transition'
 
 
 function Home() {

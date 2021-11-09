@@ -34,60 +34,60 @@ function Cards() {
           </div>
           <div className='horizontal'> <hr/> </div>
           <CardItem
+            text='üçbeş'
+            difficulty='kolay'
+            level='temel'
+            acceptance='%95,8'
+            path='/sorular/ucbes'
+          />
+          <CardItem
             text='en uzun ek'
             difficulty='kolay'
             level='temel'
             acceptance='%72,8'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='sayıdan roma rakamına çevirme'
             difficulty='kolay'
             level='orta'
             acceptance='%51,0'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='telefon numarasındaki kombinasyonlar'
             difficulty='medium'
             level='temel'
             acceptance='%61,7'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='iki sıralı dizinin medyanı'
             difficulty='orta'
             level='orta'
             acceptance='%72,8'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='sayının tersi'
             difficulty='zor'
             level='temel'
             acceptance='%55,1'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='sıralı dizideki tekrar edenleri kaldırma'
             difficulty='orta'
             level='ileri'
             acceptance='%72,8'
-            path='/services'
-          />
-          <CardItem
-            text='üçbeş'
-            difficulty='kolay'
-            level='temel'
-            acceptance='%95,8'
-            path='/services'
+            path='/sorular'
           />
           <CardItem
             text='palindrom sayı'
             difficulty='kolay'
             level='temel'
             acceptance='%72,8'
-            path='/services'
+            path='/sorular'
           />
         </div>
       </div>

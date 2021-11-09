@@ -1,0 +1,65 @@
+.problem {
+    background:rgb(38, 43, 49);
+    overflow: hidden;
+    flex-direction: row;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100vh;
+    width:100%;
+  }
+
+.problem__info__wrapper {
+  background: rgb(55, 62, 70);
+  height: 60px;
+  display: relative;
+  font-size: 0.8rem;
+  padding-left:4vw;
+  color: rgb(246, 242, 239);
+  }
+
+.problem__description__wrapper {
+    background-color: rgb(38, 43, 49);
+    width: 50%;
+    display: relative;
+    margin: 0 auto;
+    float: left;
+  }
+
+.problem__description__content{
+  white-space: pre-line;
+  padding: 2vw 2vw 2vw 2vw
+  }
+
+.problem__description__text{
+  white-space: pre-wrap;
+  color: rgb(246, 242, 239);
+  }
+
+  .problem__description__text__example{
+    background-color: rgb(54, 57, 61);
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  
+
+.problem__solution__wrapper {
+  background-color: blueviolet;
+  width: 50%;
+  height: 100%;
+  display: relative;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 auto;
+  float: right;
+  }
+
+  @media screen and (max-width: 960px) {
+    .problem__info { 
+     float: none;
+     margin-right:0;
+     width:auto;
+     border:0;
+     border-bottom:2px solid #000;    
+   }
+ }
+  

@@ -4,7 +4,6 @@
     padding-bottom: 200px;
   }
 
-
   .info {
     background: rgb(55, 62, 70);
     padding-top: 1vw;
@@ -170,8 +169,11 @@
 
 
   @media only screen and (min-width: 1200px) {
-    .content__blog__container {
-      width: 84%;
+    .cards__container {
+      width: 75%;
+    }
+    .options__container {
+      width: 23%;
     }
   }
   
