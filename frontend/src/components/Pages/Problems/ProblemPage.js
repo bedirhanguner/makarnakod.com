@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProblemPage.css';
 import Navbar from '../../Navbar/Navbar';
-import Editor from '../Editor/Editor';
+import EditorLayout from '../Editor/EditorLayout';
 
 function Problems() {
     return (
@@ -43,7 +43,7 @@ function Problems() {
                     </div>
                 </div>
                 <div className='problem__solution__wrapper'>
-                    <Editor />
+                    <EditorLayout />
                 </div>
             </div>
         </>

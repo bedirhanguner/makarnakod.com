@@ -1,11 +1,12 @@
 .problem {
-    background:rgb(38, 43, 49);
+    background:rgb(55, 62, 70);
     overflow: hidden;
     flex-direction: row;
+    top: auto;
     left:0;
     bottom:0;
     right:0;
-    height:100vh;
+    height:90vh;
     width:100%;
   }
 
@@ -20,7 +21,8 @@
 
 .problem__description__wrapper {
     background-color: rgb(38, 43, 49);
-    width: 50%;
+    width: 49.5%;
+    height: 100vh;
     display: relative;
     margin: 0 auto;
     float: left;
@@ -43,9 +45,9 @@
   
 
 .problem__solution__wrapper {
-  background-color: blueviolet;
-  width: 50%;
-  height: 100%;
+  background-color: rgb(38, 43, 49);
+  width: 49.5%;
+  height: 100vh;
   display: relative;
   flex-flow: column;
   align-items: center;

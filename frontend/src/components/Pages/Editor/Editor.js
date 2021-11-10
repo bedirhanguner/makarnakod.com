@@ -15,7 +15,7 @@ function Editor() {
     return (
         <AceEditor
             style={{
-                height: '100vh',
+                height: '60vh',
                 width: '100%',
             }}
             mode='python'
@@ -35,7 +35,7 @@ function Editor() {
                 tabSize: 0,
             }}
         />
-    )
+    );
 }
 
 export default Editor
