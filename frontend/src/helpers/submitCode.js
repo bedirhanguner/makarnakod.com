@@ -13,9 +13,7 @@ const submitCode = (data) => {
       code: data.code,
     }),
   };
-  fetch("http://localhost:8080/submitCode", requestOptions).then((response) =>
-    console.log(response)
-  );
+  return fetch("http://localhost:8080/submitCode", requestOptions)
 };
 
 export default submitCode;

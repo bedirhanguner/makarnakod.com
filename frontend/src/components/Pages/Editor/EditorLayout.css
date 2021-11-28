@@ -49,11 +49,20 @@
   padding-bottom: 2rem;
 }
 
+.loading__animation {
+  display: flex;
+  align-items: center;
+}
+
 .editor__output__header {
   font-size: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: rgb(246, 242, 239);
+}
+
+.output__hidden {
+  display: none;
 }
 
 .editor__submit {
@@ -65,7 +74,7 @@
   background-color: rgb(54, 57, 61);
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   font-size: 1.2rem;
-  height: 15vh;
+  /* height: 15vh; */
   color: rgb(246, 242, 239);
 }
 

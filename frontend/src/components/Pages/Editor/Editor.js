@@ -16,19 +16,38 @@ const languageList = [
   { value: "swift", label: "swift" },
 ];
 
+const languageTemplates = {
+  python: `def uc_bes(n):
+	output = []
+	# kodunuzu buraya yazabilirsiniz.
+	return output`,
+  javascript: ``,
+  golang: `package main
+
+import "strconv"
+
+func UcBes(n int) []string {
+  var results = make([]string, n)
+  // kodunuzu buraya yazabilirsiniz.
+  return results
+}`,
+};
+
 languageList.forEach((lang) => {
   require(`ace-builds/src-noconflict/mode-${lang.value}`);
   require(`ace-builds/src-noconflict/snippets/${lang.value}`);
 });
 
 function Editor({ userInputReceiver, lang }) {
-  const [code, setCode] = useState(
-    `def ucbes(n):\n\toutput = []\n\t# kodunuzu buraya yazabilirsiniz.\n\treturn output`
-  );
+  const [code, setCode] = useState(languageTemplates[lang]);
 
   useEffect(() => {
     userInputReceiver(code, lang);
   }, [lang, code]);
+
+  useEffect(() => {
+    setCode(languageTemplates[lang]);
+  }, [lang]);
 
   return (
     <AceEditor

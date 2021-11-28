@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Select from "react-select";
+import ReactLoading from "react-loading";
 
 import Editor from "./Editor";
 import { Button } from "../../Button/Button";
@@ -26,12 +27,32 @@ function EditorLayout() {
     language: "python",
   });
 
+  const [isRunning, setRunning] = useState(false);
+
+  const [codeOutput, setOutput] = useState("");
+
   const editorToLayout = (code, lang) => {
     setData({
       problemId: "fizzbuzz",
       code: code,
       language: lang,
     });
+  };
+
+  const fillOutput = (data) => {
+    if (data.hasErrors) {
+      setOutput(data.output);
+    } else {
+      setOutput("🙌 başarıyla tamamlandı!");
+    }
+    setRunning(false);
+  };
+
+  const submitClick = () => {
+    setRunning(true);
+    submitCode(data)
+      .then((response) => response.json())
+      .then((jsondata) => fillOutput(jsondata));
   };
 
   return (
@@ -62,13 +83,24 @@ function EditorLayout() {
           <Editor userInputReceiver={editorToLayout} lang={data.language} />
         </div>
         <div className="editor__submit">
-          <Button buttonStyle="btn--outline" onClick={() => submitCode(data)}>
+          <Button buttonStyle="btn--outline" onClick={submitClick}>
             Çalıştır
           </Button>
         </div>
         <div className="editor__output">
           <div className="editor__output__header">sonuç:</div>
-          <div className="editor__output__content">falan böyle sonuç</div>
+          <div className="editor__output__content">
+            <div className={`${!isRunning ? "" : "output__hidden"}`}>
+              {codeOutput}
+            </div>
+            <div
+              className={`loading__animation ${
+                isRunning ? "" : "output__hidden"
+              }`}
+            >
+              <ReactLoading type="bars"></ReactLoading>Çalıştırılıyor...
+            </div>
+          </div>
         </div>
       </div>
     </>
