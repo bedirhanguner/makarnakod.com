@@ -1,65 +1,79 @@
-.editor{
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    flex-direction: row;
+.editor {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: row;
 }
 
-.editor__info{
-    background: rgb(55, 62, 70);
-    height: 60px;
-    display: relative;
-    font-size: 0.8rem;
-    padding-left:3vw;
-    color: rgb(246, 242, 239);
-    overflow: hidden;
-    flex-direction: row;
+.editor__info {
+  background: rgb(55, 62, 70);
+  height: 60px;
+  display: relative;
+  font-size: 0.8rem;
+  padding-left: 3vw;
+  color: rgb(246, 242, 239);
+  overflow: hidden;
+  flex-direction: row;
 }
 
-.editor__selectbox{
-    width:10vw;
-    padding-top: 0.6rem;
-    font-size: 1rem;
-    float: left;
+.editor__selectbox {
+  width: 10vw;
+  padding-top: 0.6rem;
+  font-size: 1rem;
+  float: left;
 }
 
-.editor__logos{
-    display: relative;
-    float: right;
-    font-size: 1.5rem;
-    padding-top: 0.8rem;
-    padding-right: 1.5rem;
-    color: rgb(246, 242, 239);
+.editor__logos {
+  display: relative;
+  float: right;
+  font-size: 1.5rem;
+  padding-top: 0.8rem;
+  padding-right: 1.5rem;
+  color: rgb(246, 242, 239);
 }
 
-.editor__logos:hover{
-    display: relative;
-    float: right;
-    font-size: 1.5rem;
-    padding-top: 0.8rem;
-    padding-right: 1.5rem;
-    color: rgb(197, 191, 186);
+.editor__logos:hover {
+  display: relative;
+  float: right;
+  font-size: 1.5rem;
+  padding-top: 0.8rem;
+  padding-right: 1.5rem;
+  color: rgb(197, 191, 186);
 }
 
-.editor__output{
-    width: 100%;
-    height: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 2rem;
+.editor__output {
+  width: 100%;
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
 }
 
-.editor__output__header{
-    font-size: 1.5rem;
-    padding-top: 0.5rem;
-    padding-bottom:0.5rem;
-    color: rgb(246, 242, 239);
+.editor__output__header {
+  font-size: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: rgb(246, 242, 239);
 }
 
-.editor__output__content{
-    background-color: rgb(54, 57, 61);
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-    font-size: 1.2rem;
-    height: 15vh;
-    color: rgb(246, 242, 239);
+.editor__submit {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.editor__output__content {
+  background-color: rgb(54, 57, 61);
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  font-size: 1.2rem;
+  height: 15vh;
+  color: rgb(246, 242, 239);
+}
+
+.ace_editor,
+.ace_editor * {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", "Droid Sans Mono", "Consolas",
+    monospace !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
 }
