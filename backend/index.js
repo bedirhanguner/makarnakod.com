@@ -12,6 +12,7 @@ let languageToExtension = {
   python: ".py",
   golang: ".go",
   javascript: ".js",
+  ruby: ".rb",
 };
 
 let createExecuteOptions = (problemFilesPath, lang, userSubmittedFilePath) => {

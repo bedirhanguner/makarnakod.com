@@ -3,35 +3,21 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-beautify";
+import getCodeTemplates from "../../../helpers/codeTemplates";
 
 const languageList = [
+  { value: "python", label: "python" },
+  { value: "javascript", label: "javascript" },
+  { value: "golang", label: "go" },
+  { value: "ruby", label: "ruby" },
   { value: "c_cpp", label: "c++" },
   { value: "java", label: "java" },
-  { value: "python", label: "python" },
   { value: "c_cpp", label: "c" },
   { value: "csharp", label: "c#" },
-  { value: "javascript", label: "javascript" },
-  { value: "ruby", label: "ruby" },
-  { value: "golang", label: "go" },
   { value: "swift", label: "swift" },
 ];
 
-const languageTemplates = {
-  python: `def uc_bes(n):
-	output = []
-	# kodunuzu buraya yazabilirsiniz.
-	return output`,
-  javascript: ``,
-  golang: `package main
-
-import "strconv"
-
-func UcBes(n int) []string {
-  var results = make([]string, n)
-  // kodunuzu buraya yazabilirsiniz.
-  return results
-}`,
-};
+const languageTemplates = getCodeTemplates();
 
 languageList.forEach((lang) => {
   require(`ace-builds/src-noconflict/mode-${lang.value}`);

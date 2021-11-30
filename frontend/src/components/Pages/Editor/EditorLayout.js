@@ -9,14 +9,14 @@ import submitCode from "../../../helpers/submitCode";
 import "./EditorLayout.css";
 
 const options = [
+  { value: "python", label: "python" },
+  { value: "javascript", label: "javascript" },
+  { value: "golang", label: "go" },
+  { value: "ruby", label: "ruby" },
   { value: "c_cpp", label: "c++" },
   { value: "java", label: "java" },
-  { value: "python", label: "python" },
   { value: "c_cpp", label: "c" },
   { value: "csharp", label: "c#" },
-  { value: "javascript", label: "javascript" },
-  { value: "ruby", label: "ruby" },
-  { value: "golang", label: "go" },
   { value: "swift", label: "swift" },
 ];
 
