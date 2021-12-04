@@ -1,3 +1,4 @@
+import getBackendURL from './getURL';
 /**
  * @param  {int} problemId Problem Id of the given code.
  * @param  {string} lang Selected language for the problem.
@@ -13,7 +14,7 @@ const submitCode = (data) => {
       code: data.code,
     }),
   };
-  return fetch("http://localhost:8080/submitCode", requestOptions)
+  return fetch(`${getBackendURL()}/submitCode`, requestOptions)
 };
 
 export default submitCode;
