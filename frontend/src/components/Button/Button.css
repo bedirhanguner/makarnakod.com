@@ -39,6 +39,15 @@
   border-radius: 50px;
 }
 
+.btn--rounded--black{
+  background-color: transparent;
+  color: var(--primary);
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+}
+
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
@@ -63,4 +72,13 @@
   padding: 8px 20px;
   border: 1px solid var(--secondary);
   transition: all 0.3s ease-out;
+}
+
+.btn--rounded--black::hover{
+  background-color: var(--primary);
+  color: var(--primary);
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
 }

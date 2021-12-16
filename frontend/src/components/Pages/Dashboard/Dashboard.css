@@ -1,0 +1,106 @@
+.subject__questions{
+    margin:5vh 10vw 5vh 10vw;
+    color:rgb(246, 242, 239);
+    text-decoration: none;
+}
+.subject__items__display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.subject__header{
+    margin-bottom:3vh;
+    font-size:1.5rem;
+}
+
+.subject__items{
+    width:48.5%;
+    float:left;
+    margin-bottom:5vh;
+    background: rgb(55, 62, 70);
+    border: 1px solid rgb(246, 242, 239);
+    border-radius:10px;
+    text-decoration: none;
+}
+
+.subject__items:hover{
+    width:48.5%;
+    float:left;
+    color:rgb(246, 242, 239);
+    margin-bottom:5vh;
+    background: rgb(74, 82, 92);
+    border: 1px solid rgb(246, 242, 239);
+    border-radius:10px;
+    text-decoration: none;
+}
+
+.subject__items__header{
+    width:95%;
+    margin:2vh 0 4vh 2vw;
+    font-size:2rem;
+    float:left;
+    color:rgb(246, 242, 239);
+}
+.subject__items__rate{
+    margin:2vh 2vw 4vh 0;
+    font-size:1rem;
+    float:right;
+    color:rgb(102, 101, 100);
+}
+
+.subject__items__button{
+    width:95%;
+    margin:2vh 2vw 2vh 2vw;
+    font-size:2rem;
+}
+
+.language__item{
+    width:33.33333%;
+    padding:2vh 0 2vh 2vw;
+    background: rgb(55, 62, 70);
+    border: 1px solid rgb(28, 32, 36);
+    font-size:2rem;
+    color:rgb(246, 242, 239);
+    text-decoration: none;
+}
+.language__item:hover{
+    width:33.33333%;
+    padding:2vh 0 2vh 2vw;
+    background: rgb(55, 62, 70);
+    border: 1px solid rgb(28, 32, 36);
+    box-shadow: 0 5px 8px rgb(28, 32, 36);
+    z-index:555;
+    color:rgb(246, 242, 239);
+    font-size:2rem;
+    text-decoration: none;
+}
+
+.language__item__logo{
+    color: rgb(28, 32, 36);
+    float: left;
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+.kit__subjects__display{
+    display:flex;
+    flex:wrap;
+    
+    justify-content: space-between;
+}
+
+.kit_subjects{
+    padding:10vh 0 10vh 0;
+}
+
+.kit__items{
+    width:31%;
+    float:left;
+    margin-bottom:5vh;
+    background: rgb(55, 62, 70);
+    border: 1px solid rgb(246, 242, 239);
+    border-radius:10px;
+    text-decoration: none;
+}

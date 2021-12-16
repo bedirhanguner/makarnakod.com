@@ -98,7 +98,7 @@ function EditorLayout() {
                 isRunning ? "" : "output__hidden"
               }`}
             >
-              <ReactLoading type="bars"></ReactLoading>Çalıştırılıyor...
+              <ReactLoading type="bars"></ReactLoading>çalıştırılıyor...
             </div>
           </div>
         </div>

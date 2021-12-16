@@ -82,7 +82,7 @@
     display: relative;
     flex-flow: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 10vh auto;
     width: 75%;
     float: left;
     padding-left:10vw;
