@@ -12,8 +12,9 @@ def main():
 		known_correct_result = known_correct.uc_bes(testCase)
 		user_submitted_result = user_submitted_code.uc_bes(testCase)
 		if(len(known_correct_result) != len(user_submitted_result)):
-			error = {"FailedCase": {"TestNo": index, "TestCase": testCase }, "ErrorType": "lenDifference", "InnerError": {"LengthOfKnownCorrect": len(known_correct_result), "LengthOfUserSubmitted": len(user_submitted_result)}}
-			raise Exception("<Error>" + str(error) + "</Error>")
+			error = "{{FailedCase: {{TestNo: {0}, TestCase: {1}}}, ErrorType: 'lenDifference', InnerError: {{LengthOfKnownCorrect: {2}, LengthOfUserSubmitted: {3}}}}}".format(index, testCase, len(known_correct_result), len(user_submitted_result))
+			#error = {"FailedCase": {"TestNo": index, "TestCase": testCase }, "ErrorType": "lenDifference", "InnerError": {"LengthOfKnownCorrect": len(known_correct_result), "LengthOfUserSubmitted": len(user_submitted_result)}}
+			raise SystemExit("<Error>" + error + "</Error>")
 		for i in range(testCase):
 			if(known_correct_result[i] != user_submitted_result[i]):
 				errorArray = []
@@ -24,8 +25,9 @@ def main():
 				else:
 					errorArray += user_submitted_result[i-4:i+1]
 					correctArray += known_correct_result[i-4:i+1]
-				error = {"FailedCase": {"TestNo": index, "TestCase": testCase }, "ErrorType": "valueDifference", "InnerError": {"KnownCorrect": correctArray, "UserSubmitted": errorArray}}
-				raise Exception("<Error>" + str(error) + "</Error>")
+				error = "{{FailedCase: {{TestNo: {0}, TestCase: {1}}}, ErrorType: 'valueDifference', InnerError: {{KnownCorrect: {2}, UserSubmitted: {3}}}}}".format(index, testCase, correctArray, errorArray)
+				#error = {"FailedCase": {"TestNo": index, "TestCase": testCase }, "ErrorType": "valueDifference", "InnerError": {"KnownCorrect": correctArray, "UserSubmitted": errorArray}}
+				raise SystemExit("<Error>" + error + "</Error>")
 					
 if __name__ == '__main__':
 	main()

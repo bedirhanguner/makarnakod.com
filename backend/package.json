@@ -4,9 +4,9 @@
   "description": "makarnakod.com için backend hizmeti.",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc-watch *.ts --onSuccess \"node server.js\"",
+    "dev": "tsc-watch *.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "build": "tsc",
-    "start": "node server.js",
+    "start": "node ./build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

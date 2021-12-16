@@ -1,5 +1,5 @@
 var cp = require('child_process');
-import { extensionOf, parseErrorMessage } from './helper';
+import { CodeExecuteResult, extensionOf, parseErrorMessage } from './helper';
 
 export function createExecuteOptions(
   problemFilesPath: string,
@@ -10,7 +10,11 @@ export function createExecuteOptions(
   return `${problemFilesPath}/main.${extension} ${problemFilesPath}/known_correct.${extension} ${submittedCodePath}`;
 }
 
-type ExecuteResultType = { hasErrors: boolean; output: string | null };
+function testFunction(budu: string) {
+  console.log('bidi', budu);
+}
+
+type ExecuteResultType = { hasErrors: boolean; output: CodeExecuteResult | null | string };
 export function executeCode(executeCommand: string): Promise<ExecuteResultType> {
   let response: ExecuteResultType = { hasErrors: false, output: null };
 

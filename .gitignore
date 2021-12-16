@@ -105,3 +105,7 @@ dist
 .vscode/settings.json
 
 backend/codeExecuter/python/fizzbuzz/__pycache__
+
+backend/build/
+
+backend/userSubmittedCodes/

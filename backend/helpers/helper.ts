@@ -38,10 +38,16 @@ export function prepareUserCodeExecute(
   return executionProps;
 }
 
+export type CodeExecuteResult = {
+  FailedCase: { TestNo: number; TestCase: string };
+  ErrorType: string;
+  InnerError: any;
+};
 export function parseErrorMessage(error: string): string {
   let message = error;
   if (error.includes('<Error>')) {
     message = error.split(/<Error>(.*)<\/Error>/).find((e) => e.startsWith('{')) || error; // kinda jank but it should work. Trying to get this <Error>{'FailedCase': {'TestNo': 1, 'TestCase': 1}, 'ErrorType': 'lenDifference', 'InnerError': {'LengthOfKnownCorrect': 1, 'LengthOfUserSubmitted': 0}}</Error> part
+    console.log(JSON.parse(JSON.stringify(message)));
   }
   return message;
 }

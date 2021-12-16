@@ -1,14 +1,31 @@
-let knownCorrect = require("./known_correct");
-let userSubmitted = require("./user_submitted_code");
+const knownCorrect = require('./known_correct');
+const userSubmitted = require('./user_submitted_code');
 
-let areEqualArrays = (arr1, arr2) => {
-  return arr1.length == arr2.length && arr1.every((v) => arr2.indexOf(v) >= 0);
-};
+const testCases = [0, 1, 3, 10, 100, 1000, Math.floor(Math.random() * (10000 - 1000) + 1000)];
 
-const testCases = [0, 1, 100];
+testCases.forEach((input, index) => {
+  const knownCorrectResult = knownCorrect.ucBes(input);
+  const userSubmittedResult = userSubmitted.ucBes(input);
 
-testCases.forEach((input) => {
-  if (!areEqualArrays(knownCorrect.ucBes(input), userSubmitted.ucBes(input))) {
-    throw "Arrays are not the same for input " + input;
+  if (knownCorrectResult.length !== userSubmittedResult.length) {
+    const error = `{FailedCase: {TestNo: ${index}, TestCase: ${input}}, ErrorType: 'lenDifference', InnerError: {LengthOfKnownCorrect: ${knownCorrectResult.length}, LengthOfUserSubmitted: ${userSubmittedResult.length}}}`;
+    throw `<Error>${error}</Error>`;
   }
+  [...Array(input).keys()].forEach((i) => {
+    if (knownCorrectResult[i] !== userSubmittedResult[i]) {
+      let errorArray = [];
+      let correctArray = [];
+
+      if (knownCorrectResult.length < 4) {
+        errorArray += userSubmittedResult.slice(0, userSubmittedResult.length + 1);
+        correctArray += knownCorrectResult.slice(0, knownCorrectResult.length + 1);
+      } else {
+        errorArray += userSubmittedResult.slice(i - 4, i + 1);
+        correctArray += knownCorrectResult.slice(i - 4, i + 1);
+      }
+
+      const error = `{FailedCase: {TestNo: ${index}, TestCase: ${input}}, ErrorType: 'valueDifference', InnerError: {KnownCorrect: ${correctArray}, UserSubmitted: ${errorArray}}}`;
+      throw `<Error>${error}</Error>`;
+    }
+  });
 });
