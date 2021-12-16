@@ -8,6 +8,7 @@ import ProblemPage from './components/Pages/Problems/ProblemPage';
 function App() {
   return (
     <>
+    
     <Router> 
         <Switch> 
           <Route path='/' exact component={Home} />
@@ -15,6 +16,7 @@ function App() {
           <Route path='/sorular/ucbes' exact component={ProblemPage} />
         </Switch>
     </Router>
+    
     </>
   );
 }

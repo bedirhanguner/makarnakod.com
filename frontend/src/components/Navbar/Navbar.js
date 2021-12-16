@@ -34,9 +34,7 @@ function Navbar() {
             <i class="fas fa-fingerprint"/>
             </div>
           </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
+          
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
@@ -61,7 +59,6 @@ function Navbar() {
                 diller
               </Link>
             </li>
-
             <li>
               <Link
                 to='/uye-ol'
@@ -71,7 +68,6 @@ function Navbar() {
                 üye ol
               </Link>
             </li>
-
             <li>
               <Link
                 to='/giris-yap'
@@ -82,10 +78,15 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>üye ol</Button>}
-          {button && <Button buttonStyle='btn--primary'>giriş yap</Button>}
-
-        </div>
+        </div>  
+        
+        <div className='nav-btn'>
+            {button && <Button buttonStyle='btn--outline'>üye ol</Button>}
+            {button && <Button buttonStyle='btn--primary'>giriş yap</Button>}
+          </div>
+        <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>   
       </nav>
     </>
   );

@@ -23,7 +23,6 @@ function Cards() {
         <Searchbar/>
       </div>
 
-      
       <div className='cards__container'>
         <div className='cards__wrapper'>
         <div className='cards__item__header'>

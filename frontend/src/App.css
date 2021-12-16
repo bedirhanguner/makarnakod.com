@@ -4,40 +4,19 @@
   padding: 0;
   font-family: 'PT Sans', sans-serif;
 }
-/*
-.anasayfa,
-.sorular,
-.diller,
-.uye-ol {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
- .anasayfa {
-  background-image: url('/images/img-2.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-/*
-.products {
-  background-image: url('/images/img-1.jpg');
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+::-webkit-scrollbar{
+  width:10px;
 }
 
-.sign-up {
-  background-image: url('/images/img-8.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-} */
+::-webkit-scrollbar-track{
+  background:rgb(38, 43, 49);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(246, 242, 239);
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(55, 62, 70);
+}

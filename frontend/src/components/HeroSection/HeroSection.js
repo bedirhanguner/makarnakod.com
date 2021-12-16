@@ -3,7 +3,6 @@ import {Link} from 'react-scroll'
 import '../../App.css';
 import { Button } from '../Button/Button';
 import './HeroSection.css';
-
 function HeroSection() {
   return (
     <div className='hero-container'>
