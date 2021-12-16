@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css';
 
-const STYLES = ['btn--primary', 'btn--outline', 'btn--outline--black', 'btn--rounded'];
+const STYLES = ['btn--primary', 'btn--outline', 'btn--outline--black', 'btn--rounded','btn--rounded--black'];
 
 const SIZES = ['btn--medium', 'btn--large'];
 export const Button = ({

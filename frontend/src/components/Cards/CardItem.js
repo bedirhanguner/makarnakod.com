@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function CardItem(props) {
   return (
     <>
-      <li className='cards__item'>
+      <div className='cards__item'>
         <Link className='cards__item__link' to={props.path}>
           <div className='cards__item__info'>
             <div className='cards__item__text'>{props.text}</div>
@@ -13,7 +13,7 @@ function CardItem(props) {
             <div className='cards__item__acceptance'>{props.acceptance}</div>
           </div>
         </Link>
-      </li>
+      </div>
     </>
   );
 }
