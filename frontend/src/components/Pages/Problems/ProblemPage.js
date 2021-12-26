@@ -22,40 +22,36 @@ function Problems() {
         <>
             <Navbar />
             {
-            items.map(item =>{return(
-                <div className='problem'>
-                <div className='problem__description__wrapper'>
-                    <div className='problem__info__wrapper'>
-                        <h1> {item.name} </h1>
-                        <h3> {item.level}, {item.difficulty}</h3> 
-                    </div>
-                    <div className='problem__description__content'>
-                        <div className='problem__description__text'>
-                            {item.description}
+                items.map(item =>{return(
+                    <div className='problem'>
+                    <div className='problem__description__wrapper'>
+                        <div className='problem__info__wrapper'>
+                            <h1> {item.name} </h1>
+                            <h3> {item.level}, {item.difficulty}</h3> 
+                        </div>
+                        <div className='problem__description__content'>
+                            <div className='problem__description__text'>
+                                {item.description}
 
-                            <br/>örnek 1:<br/><br/>
-                            <div className='problem__description__text__example'>
-                                {item.examples[0]}
+                                {item.examples.map((example, index) => {
+                                    return (
+                                        <div>
+                                            <br/> <p>örnek {index+1}:</p><br/>
+                                            <div className='problem__description__text__example'>
+                                                {example}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
-
-                            <br/>örnek 2:<br/><br/>
-                            <div className='problem__description__text__example'>
-                                {item.examples[1]}
-                            </div>
-
-                            <br/>örnek 3:<br/><br/>
-                            <div className='problem__description__text__example'>
-                                {item.examples[2]}
-                            </div> 
                         </div>
                     </div>
+                    <div className='problem__solution__wrapper'>
+                        <EditorLayout />
+                    </div>
                 </div>
-                <div className='problem__solution__wrapper'>
-                    <EditorLayout />
-                </div>
-            </div>
-            )})
-        }
+                )})
+            }
         </>
     );
 }
