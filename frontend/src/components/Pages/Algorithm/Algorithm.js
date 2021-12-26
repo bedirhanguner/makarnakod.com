@@ -2,8 +2,6 @@ import React from 'react';
 
 import '../../Cards/Cards.css';
 import CardItem from '../../Cards/CardItem';
-import { Button } from '../../Button/Button';
-import { Searchbar } from '../../Searchbar/Searchbar';
 import Checkbox from '../../Checkbox/Checkbox';
 
 function Algorithm() {

@@ -7,13 +7,21 @@
     "dev": "tsc-watch *.ts --outDir ./build --onSuccess \"node ./build/server.js\"",
     "build": "tsc",
     "start": "node ./build/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./build/server.js --ignore client",
+    "client": "npm start --prefix client",
+    "concurrent": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "-": "^0.0.1",
+    "concurrently": "^6.5.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "g": "^2.0.1",
+    "mongoose": "^6.1.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -27,6 +35,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "nodemon": "^2.0.15",
     "prettier": "2.5.1",
     "tsc-watch": "^4.5.0",
     "typescript": "^4.5.2"
