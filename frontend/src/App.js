@@ -15,6 +15,7 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/sorular' exact component={Problems} />
           <Route path='/algoritma/ucbes' exact component={ProblemPage} />
+          <Route path='/algoritma/en-uzun-ek' exact component={ProblemPage} />
           <Route path='/algoritma' exact component={AlgorithmPage} />
         </Switch>
     </Router>

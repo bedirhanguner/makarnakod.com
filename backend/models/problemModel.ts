@@ -5,7 +5,9 @@ export interface Iproblem {
   difficulty: string;
   level: string;
   name: string;
+  displayname: string;
   examples?: string[];
+  acceptance?: number;
 }
 
 const problemSchema = new Schema<Iproblem>({
@@ -14,7 +16,9 @@ const problemSchema = new Schema<Iproblem>({
   difficulty: { type: String, required: true },
   level: { type: String, required: true },
   name: { type: String, required: true },
+  displayname: { type: String, required: true },
   examples: { type: [String] },
+  acceptance: {type: Number}
 });
 
 export const Problem = model<Iproblem>('algorithm_problems', problemSchema);

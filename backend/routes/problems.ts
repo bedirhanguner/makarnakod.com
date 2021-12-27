@@ -12,3 +12,14 @@ ProblemsRouter.get('/:problemId', (req, res) => {
     }
   });
 });
+
+ProblemsRouter.get('', (req, res) => {
+  const problem = Problem.find({}).exec((err, data) => {
+    if (err) throw err;
+    if (data) {
+      res.status(200).json(data);
+    } else {
+      res.status(404).send('Problems not found');
+    }
+  });
+});

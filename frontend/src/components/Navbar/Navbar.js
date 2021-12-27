@@ -31,10 +31,10 @@ function Navbar() {
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             makarnakod
             <div className='logo'>
-            <i class="fas fa-fingerprint"/>
+            <i className="fas fa-fingerprint"/>
             </div>
           </Link>
-          
+          {/* TODO menu active should go down instead of up at the problem pages */}
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>

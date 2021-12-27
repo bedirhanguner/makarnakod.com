@@ -1,10 +1,24 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react'
 import '../../Cards/Cards.css';
 import CardItem from '../../Cards/CardItem';
 import Checkbox from '../../Checkbox/Checkbox';
+import getBackendURL from '../../../helpers/getURL';
 
 function Algorithm() {
+    useEffect(() => {
+        fetchProblem();
+    }, [])
+
+    const [problem, setProblem] = useState([]);
+    const fetchProblem = async () => {
+        const requestOptions = {
+            method: "GET",
+        };
+        const data = await fetch(getBackendURL() + '/algoritma', requestOptions);
+        const problem = await data.json();
+        setProblem(problem);
+    }
+
   return (
     <div className='cards'>
       <div className="info">
@@ -21,62 +35,18 @@ function Algorithm() {
             <div className='cards__item__acceptance'><h4>başarı oranı</h4></div>
           </div>
           <div className='horizontal'> <hr/> </div>
-          <CardItem
-            text='üçbeş'
-            difficulty='kolay'
-            level='temel'
-            acceptance='%95,8'
-            path='/algoritma/ucbes'
-          />
-          <CardItem
-            text='en uzun ek'
-            difficulty='kolay'
-            level='temel'
-            acceptance='%72,8'
-            path='/sorular'
-          />
-          <CardItem
-            text='sayıdan roma rakamına çevirme'
-            difficulty='kolay'
-            level='orta'
-            acceptance='%51,0'
-            path='/sorular'
-          />
-          <CardItem
-            text='telefon numarasındaki kombinasyonlar'
-            difficulty='medium'
-            level='temel'
-            acceptance='%61,7'
-            path='/sorular'
-          />
-          <CardItem
-            text='iki sıralı dizinin medyanı'
-            difficulty='orta'
-            level='orta'
-            acceptance='%72,8'
-            path='/sorular'
-          />
-          <CardItem
-            text='sayının tersi'
-            difficulty='zor'
-            level='temel'
-            acceptance='%55,1'
-            path='/sorular'
-          />
-          <CardItem
-            text='sıralı dizideki tekrar edenleri kaldırma'
-            difficulty='orta'
-            level='ileri'
-            acceptance='%72,8'
-            path='/sorular'
-          />
-          <CardItem
-            text='palindrom sayı'
-            difficulty='kolay'
-            level='temel'
-            acceptance='%72,8'
-            path='/sorular'
-          />
+          {problem.map((example) => {
+            return (
+              <CardItem
+              text={example.displayname}
+              difficulty={example.difficulty}
+              level={example.level}
+              acceptance={example.acceptance}
+              path={'/algoritma/'+example.name}
+              />  
+              )
+            })
+          }
         </div>
       </div>
       
@@ -105,10 +75,10 @@ function Algorithm() {
 
         <h4 className='options__items'>seviye</h4>
           <Checkbox 
-          id='temel'
-          value='temel'
-          name='temel'
-          text='temel'/>
+          id='baslangic'
+          value='baslangic'
+          name='baslangic'
+          text='başlangıç'/>
 
           <Checkbox 
           id='orta'

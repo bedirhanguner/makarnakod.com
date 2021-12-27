@@ -4,4 +4,4 @@ import { ProblemsRouter } from './problems';
 
 export const router = Router();
 
-router.use('/problem', ProblemsRouter);
+router.use('/algoritma', ProblemsRouter);

@@ -15,7 +15,7 @@ function Problems(props) {
         const requestOptions = {
             method: "GET",
         };
-        const data = await fetch(getBackendURL() + '/problem/' + paths[paths.length - 1], requestOptions);
+        const data = await fetch(getBackendURL() + '/algoritma/' + paths[paths.length - 1], requestOptions);
         const problem = await data.json();
         setProblem(problem);
     }
@@ -26,7 +26,7 @@ function Problems(props) {
             <div className='problem'>
                 <div className='problem__description__wrapper'>
                     <div className='problem__info__wrapper'>
-                        <h1> {problem.name} </h1>
+                        <h1> {problem.displayname} </h1>
                         <h3> {problem.level}, {problem.difficulty}</h3>
                     </div>
                     <div className='problem__description__content'>

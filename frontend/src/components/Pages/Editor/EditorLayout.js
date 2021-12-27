@@ -73,10 +73,10 @@ function EditorLayout() {
             />
           </div>
           <div className="editor__logos">
-            <i class="fas fa-expand"></i>
+            <i className="fas fa-expand"></i>
           </div>
           <div className="editor__logos">
-            <i class="fas fa-undo"></i>
+            <i className="fas fa-undo"></i>
           </div>
         </div>
         <div className="editor__container">

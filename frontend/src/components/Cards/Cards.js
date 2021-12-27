@@ -15,11 +15,11 @@ function Cards() {
       </div>
 
       <div className='subjectSelectors'>
-        <Button buttonStyle='btn--rounded'><div className='subjects'><i class="fas fa-bolt"></i></div> tüm konular</Button>
-        <Button buttonStyle='btn--rounded'><div className='algorithm'><i class="fas fa-code"></i></div> algoritma</Button>
-        <Button buttonStyle='btn--rounded'><div className='database'><i class="fas fa-database"></i></div> veritabanı</Button>
-        <Button buttonStyle='btn--rounded'><div className='script'><i class="fas fa-terminal"></i></div> betik</Button>
-        <Button buttonStyle='btn--rounded'><div className='data-structures'><i class="fas fa-sitemap"></i></div> veri yapıları</Button>
+        <Button buttonStyle='btn--rounded'><div className='subjects'><i className="fas fa-bolt"></i></div> tüm konular</Button>
+        <Button buttonStyle='btn--rounded'><div className='algorithm'><i className="fas fa-code"></i></div> algoritma</Button>
+        <Button buttonStyle='btn--rounded'><div className='database'><i className="fas fa-database"></i></div> veritabanı</Button>
+        <Button buttonStyle='btn--rounded'><div className='script'><i className="fas fa-terminal"></i></div> betik</Button>
+        <Button buttonStyle='btn--rounded'><div className='data-structures'><i className="fas fa-sitemap"></i></div> veri yapıları</Button>
         <Searchbar/>
       </div>
 

@@ -57,31 +57,31 @@ function Dashboard() {
             </div>
             <div className='subject__items__display'>
             <Link className='language__item' to='programlama-dilleri/python'>
-                <div className='language__item__logo'><i class="fab fa-python"></i></div> python
+                <div className='language__item__logo'><i className="fab fa-python"></i></div> python
               </Link>
               <Link className='language__item' to='programlama-dilleri/javascript'>
-                <div className='language__item__logo'><i class="fab fa-js-square"></i></div> javascript
+                <div className='language__item__logo'><i className="fab fa-js-square"></i></div> javascript
                 </Link>
               <Link className='language__item' to='programlama-dilleri/ruby'>
-                <div className='language__item__logo'><i class="fab fa-css3"></i></div> ruby
+                <div className='language__item__logo'><i className="fab fa-css3"></i></div> ruby
                 </Link>
               <Link className='language__item' to='programlama-dilleri/golang'>
-                <div className='language__item__logo'><i class="fab fa-google-wallet"></i></div> golang
+                <div className='language__item__logo'><i className="fab fa-google-wallet"></i></div> golang
                 </Link>
               <Link className='language__item' to='programlama-dilleri/php'>
-                <div className='language__item__logo'><i class="fab fa-php"></i></div> php
+                <div className='language__item__logo'><i className="fab fa-php"></i></div> php
                 </Link>
               <Link className='language__item' to='programlama-dilleri/java'>
-                <div className='language__item__logo'><i class="fab fa-java"></i></div> java
+                <div className='language__item__logo'><i className="fab fa-java"></i></div> java
                 </Link>
               <Link className='language__item' to='programlama-dilleri/c'>
-                <div className='language__item__logo'><i class="fab fa-cuttlefish"></i></div> c
+                <div className='language__item__logo'><i className="fab fa-cuttlefish"></i></div> c
                 </Link>
               <Link className='language__item' to='programlama-dilleri/cplusplus'>
-                <div className='language__item__logo'><i class="fas fa-meteor"></i></div> c++
+                <div className='language__item__logo'><i className="fas fa-meteor"></i></div> c++
                 </Link>
               <Link className='language__item' to='programlama-dilleri/csharp'>
-                <div className='language__item__logo'><i class="fas fa-cube"></i></div> C#
+                <div className='language__item__logo'><i className="fas fa-cube"></i></div> C#
                 </Link>
             </div>
             
