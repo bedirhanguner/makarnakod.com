@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import './ProblemPage.css';
+import './ProblemDescription.css';
 import Navbar from '../../Navbar/Navbar';
 import EditorLayout from '../Editor/EditorLayout';
 import getBackendURL from '../../../helpers/getURL';
 
-function Problems(props) {
+function ProblemDescription(props) {
     useEffect(() => {
         fetchProblem();
     }, [])
@@ -55,4 +55,4 @@ function Problems(props) {
     );
 }
 
-export default Problems;
+export default ProblemDescription;

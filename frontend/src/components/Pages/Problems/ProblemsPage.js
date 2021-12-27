@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import '../../Cards/Cards.css';
-import CardItem from '../../Cards/CardItem';
+import './ProblemRow.css';
+import ProblemRow from './ProblemRow';
 import Checkbox from '../../Checkbox/Checkbox';
 import getBackendURL from '../../../helpers/getURL';
 
-function Algorithm() {
+function ProblemsPage(props) {
     useEffect(() => {
         fetchProblem();
     }, [])
@@ -14,7 +14,7 @@ function Algorithm() {
         const requestOptions = {
             method: "GET",
         };
-        const data = await fetch(getBackendURL() + '/algoritma', requestOptions);
+        const data = await fetch(getBackendURL() + '/'+props.address, requestOptions);
         const problem = await data.json();
         setProblem(problem);
     }
@@ -22,27 +22,27 @@ function Algorithm() {
   return (
     <div className='cards'>
       <div className="info">
-        <h1> algoritma </h1>
-        <h3>algoritma sorularına göz at</h3>
+        <h1> {props.domain} </h1>
+        <h3>{props.domain} sorularına göz at</h3>
       </div>
 
       <div className='cards__container'>
         <div className='cards__wrapper'>
-        <div className='cards__item__header'>
-            <div className='cards__item__text'><h4>soru</h4></div>
-            <div className='cards__item__level'><h4>seviye</h4></div>
-            <div className='cards__item__difficulty'><h4>zorluk</h4></div>
-            <div className='cards__item__acceptance'><h4>başarı oranı</h4></div>
+        <div className='row_item_header'>
+            <div className='row_item_text'><h4>soru</h4></div>
+            <div className='row_item_level'><h4>seviye</h4></div>
+            <div className='row_item_difficulty'><h4>zorluk</h4></div>
+            <div className='row_item_acceptance'><h4>başarı oranı</h4></div>
           </div>
           <div className='horizontal'> <hr/> </div>
           {problem.map((example) => {
             return (
-              <CardItem
-              text={example.displayname}
-              difficulty={example.difficulty}
-              level={example.level}
-              acceptance={example.acceptance}
-              path={'/algoritma/'+example.name}
+              <ProblemRow
+                text={example.displayname}
+                difficulty={example.difficulty}
+                level={example.level}
+                acceptance={example.acceptance}
+                path={'/algoritma/'+example.name}
               />  
               )
             })
@@ -98,4 +98,4 @@ function Algorithm() {
   );
 }
 
-export default Algorithm;
+export default ProblemsPage;

@@ -108,72 +108,68 @@
     padding-bottom:1rem;
   }
   
-  .cards__items {
+  .row_items {
     margin-bottom: 24px;
   }
   
-  .cards__item {
+  .row_item {
     display: flex;
     flex: 1;
     background-color: rgb(55, 62, 70);
     
   }
 
-  .cards__item:hover {
+  .row_item:hover {
     display: flex;
     flex: 1;
     background-color: rgb(38, 43, 49);
   }
   
-  .cards__item__link {
+  .row_item_link {
     display: flex;
     flex-flow: column;
     width: 100%;
-    /*box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
-    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
-    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
-    border-radius: 10px;*/
     overflow: hidden;
     text-decoration: none;
   }
   
-  .cards__item__info {
+  .row_item_info {
     padding: 20px 30px 30px;
     overflow: hidden;
     color: rgb(246, 242, 239);
   }
   
-  .cards__item__info:hover {
+  .row_item_info:hover {
     padding: 20px 30px 30px;
     overflow: hidden;
     color: #6cadd8;
   }
 
-  .cards__item__header {
+  .row_item_header {
     padding: 20px 30px 30px;
     overflow: hidden;
     color: rgb(246, 242, 239);
   }
   
-  .cards__item__text {
+  .row_item_text {
     float:left;
     font-size: 18px;
     line-height: 24px;
     width:55%;
   }
-  .cards__item__difficulty {
+  .row_item_difficulty {
     float:left;
     font-size: 18px;
     line-height: 24px;
     width:15%;
   }
-  .cards__item__level {
+  .row_item_level {
     float:left;
     font-size: 18px;
     line-height: 24px;
     width:15%;
   }
-  .cards__item__acceptance {
+  .row_item_acceptance {
     float:left;
     font-size: 18px;
     line-height: 24px;
@@ -189,25 +185,25 @@
       width: 23%;
     }
 
-    .cards__item__text {
+    .row_item_text {
       float:left;
       font-size: 14px;
       line-height: 24px;
       width:40%;
     }
-    .cards__item__difficulty {
+    .row_item_difficulty {
       float:left;
       font-size: 13px;
       line-height: 24px;
       width:20%;
     }
-    .cards__item__level {
+    .row_item_level {
       float:left;
       font-size: 13px;
       line-height: 24px;
       width:20%;
     }
-    .cards__item__acceptance {
+    .row_item_acceptance {
       float:left;
       font-size: 13px;
       line-height: 24px;

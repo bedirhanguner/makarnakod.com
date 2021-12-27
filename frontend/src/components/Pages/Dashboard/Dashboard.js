@@ -24,9 +24,9 @@ function Dashboard() {
                 rate='0/20 tanesi tamamlandı'
                 />
                 <Questions
-                text='veritabanı'
-                path='/veritabani'
-                rate='0/35 tanesi tamamlandı'
+                text='veri yapıları'
+                path='/veri-yapilari'
+                rate='0/42 tanesi tamamlandı'
                 />
                 <Questions
                 text='fonksiyonel programlama'
@@ -39,9 +39,9 @@ function Dashboard() {
                 rate='0/27 tanesi tamamlandı'
                 />
                 <Questions
-                text='veri yapıları'
-                path='/veri-yapılari'
-                rate='0/42 tanesi tamamlandı'
+                text='veritabanı'
+                path='/veritabani'
+                rate='0/35 tanesi tamamlandı'
                 />
                 <Questions
                 text='regex'
