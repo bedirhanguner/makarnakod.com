@@ -5,7 +5,7 @@
   flex-direction: row;
 }
 
-.editor__info {
+.editor_info {
   background: rgb(55, 62, 70);
   height: 60px;
   display: relative;
@@ -16,14 +16,14 @@
   flex-direction: row;
 }
 
-.editor__selectbox {
+.editor_selectbox {
   width: 10vw;
   padding-top: 0.6rem;
   font-size: 1rem;
   float: left;
 }
 
-.editor__logos {
+.editor_logos {
   display: relative;
   float: right;
   font-size: 1.5rem;
@@ -32,7 +32,7 @@
   color: rgb(246, 242, 239);
 }
 
-.editor__logos:hover {
+.editor_logos:hover {
   display: relative;
   float: right;
   font-size: 1.5rem;
@@ -41,7 +41,7 @@
   color: rgb(197, 191, 186);
 }
 
-.editor__output {
+.editor_output {
   width: 100%;
   height: 100%;
   padding-left: 1rem;
@@ -49,28 +49,28 @@
   padding-bottom: 2rem;
 }
 
-.loading__animation {
+.loading_animation {
   display: flex;
   align-items: center;
 }
 
-.editor__output__header {
+.editor_output_header {
   font-size: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   color: rgb(246, 242, 239);
 }
 
-.output__hidden {
+.output_hidden {
   display: none;
 }
 
-.editor__submit {
+.editor_submit {
   padding-left: 1rem;
   padding-top: 1rem;
 }
 
-.editor__output__content {
+.editor_output_content {
   background-color: rgb(54, 57, 61);
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   font-size: 1.2rem;

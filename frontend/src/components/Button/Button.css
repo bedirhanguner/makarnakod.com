@@ -9,20 +9,20 @@
   cursor: pointer;
 }
 
-.btn--primary {
+.btn_primary {
   background-color: var(--primary);
   color: var(--secondary);
   border: 1px solid var(--primary);
 }
 
-.btn--outline {
+.btn_outline {
   background-color: transparent;
   color: var(--primary);
   border: 1px solid var(--primary);
   transition: all 0.3s ease-out;
 }
 
-.btn--outline--black {
+.btn_outline_black {
   background-color: transparent;
   color: var(--secondary);
   padding: 8px 20px;
@@ -30,7 +30,7 @@
   transition: all 0.3s ease-out;
 }
 
-.btn--rounded{
+.btn_rounded{
   background-color: transparent;
   color: var(--primary);
   padding: 8px 20px;
@@ -39,7 +39,7 @@
   border-radius: 50px;
 }
 
-.btn--rounded--black{
+.btn_rounded_black{
   background-color: transparent;
   color: var(--primary);
   padding: 8px 20px;
@@ -48,25 +48,25 @@
   border-radius: 10px;
 }
 
-.btn--medium {
+.btn_medium {
   padding: 8px 20px;
   font-size: 18px;
 }
 
-.btn--large {
+.btn_large {
   padding: 12px 26px;
   font-size: 20px;
 }
 
-.btn--large:hover,
-.btn--medium:hover {
+.btn_large:hover,
+.btn_medium:hover {
   transition: all 0.3s ease-out;
   background: var(--primary);
   color: var(--secondary);
   transition: 250ms;
 }
 
-.btn--outline--black:hover {
+.btn_outline_black:hover {
   background-color: var(--secondary);
   color: var(--primary);
   padding: 8px 20px;
@@ -74,7 +74,7 @@
   transition: all 0.3s ease-out;
 }
 
-.btn--rounded--black::hover{
+.btn_rounded_black::hover{
   background-color: var(--primary);
   color: var(--primary);
   padding: 8px 20px;

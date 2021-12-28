@@ -5,9 +5,6 @@ import EditorLayout from '../Editor/EditorLayout';
 import getBackendURL from '../../../helpers/getURL';
 
 function ProblemDescription(props) {
-    useEffect(() => {
-        fetchProblem();
-    }, [])
 
     const [problem, setProblem] = useState({});
     const fetchProblem = async () => {
@@ -19,6 +16,10 @@ function ProblemDescription(props) {
         const problem = await data.json();
         setProblem(problem);
     }
+
+    useEffect(() => {
+        fetchProblem();
+    }, [])
 
     return (
         <>

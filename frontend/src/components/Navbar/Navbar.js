@@ -27,33 +27,33 @@ function Navbar() {
   return (
     <>
       <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+        <div className='navbar_container'>
+          <Link to='/' className='navbar_logo' onClick={closeMobileMenu}>
             makarnakod
             <div className='logo'>
             <i className="fas fa-fingerprint"/>
             </div>
           </Link>
           {/* TODO menu active should go down instead of up at the problem pages */}
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+          <ul className={click ? 'nav_menu active' : 'nav_menu'}>
+            <li className='nav_item'>
+              <Link to='/' className='nav_links' onClick={closeMobileMenu}>
                 anasayfa
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className='nav_item'>
               <Link
                 to='/sorular'
-                className='nav-links'
+                className='nav_links'
                 onClick={closeMobileMenu}
               >
                 sorular
               </Link>
             </li>
-            <li className='nav-item'>
+            <li className='nav_item'>
               <Link
                 to='/diller'
-                className='nav-links'
+                className='nav_links'
                 onClick={closeMobileMenu}
               >
                 diller
@@ -62,7 +62,7 @@ function Navbar() {
             <li>
               <Link
                 to='/uye-ol'
-                className='nav-links-mobile'
+                className='nav_links_mobile'
                 onClick={closeMobileMenu}
               >
                 üye ol
@@ -71,7 +71,7 @@ function Navbar() {
             <li>
               <Link
                 to='/giris-yap'
-                className='nav-links-mobile'
+                className='nav_links_mobile'
                 onClick={closeMobileMenu}
               >
                 giriş yap
@@ -80,11 +80,11 @@ function Navbar() {
           </ul>
         </div>  
         
-        <div className='nav-btn'>
-            {button && <Button buttonStyle='btn--outline'>üye ol</Button>}
-            {button && <Button buttonStyle='btn--primary'>giriş yap</Button>}
+        <div className='nav_btn'>
+            {button && <Button buttonStyle='btn_outline'>üye ol</Button>}
+            {button && <Button buttonStyle='btn_primary'>giriş yap</Button>}
           </div>
-        <div className='menu-icon' onClick={handleClick}>
+        <div className='menu_icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>   
       </nav>

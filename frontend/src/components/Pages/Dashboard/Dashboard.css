@@ -1,21 +1,21 @@
-.subject__questions{
+.subject_questions{
     margin:5vh 10vw 5vh 10vw;
     color:rgb(246, 242, 239);
     text-decoration: none;
 }
-.subject__items__display{
+.subject_items_display{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     text-decoration: none;
 }
 
-.subject__header{
+.subject_header{
     margin-bottom:3vh;
     font-size:1.5rem;
 }
 
-.subject__items{
+.subject_items{
     width:48.5%;
     float:left;
     margin-bottom:5vh;
@@ -25,7 +25,7 @@
     text-decoration: none;
 }
 
-.subject__items:hover{
+.subject_items:hover{
     width:48.5%;
     float:left;
     color:rgb(246, 242, 239);
@@ -36,27 +36,27 @@
     text-decoration: none;
 }
 
-.subject__items__header{
+.subject_items_header{
     width:95%;
     margin:2vh 0 4vh 2vw;
     font-size:2rem;
     float:left;
     color:rgb(246, 242, 239);
 }
-.subject__items__rate{
+.subject_items_rate{
     margin:2vh 2vw 4vh 0;
     font-size:1rem;
     float:right;
     color:rgb(102, 101, 100);
 }
 
-.subject__items__button{
+.subject_items_button{
     width:95%;
     margin:2vh 2vw 2vh 2vw;
     font-size:2rem;
 }
 
-.language__item{
+.language_item{
     width:33.33333%;
     padding:2vh 0 2vh 2vw;
     background: rgb(55, 62, 70);
@@ -65,7 +65,7 @@
     color:rgb(246, 242, 239);
     text-decoration: none;
 }
-.language__item:hover{
+.language_item:hover{
     width:33.33333%;
     padding:2vh 0 2vh 2vw;
     background: rgb(55, 62, 70);
@@ -77,14 +77,14 @@
     text-decoration: none;
 }
 
-.language__item__logo{
+.language_item_logo{
     color: rgb(28, 32, 36);
     float: left;
     padding-right: 1rem;
     text-decoration: none;
 }
 
-.kit__subjects__display{
+.kit_subjects_display{
     display:flex;
     flex:wrap;
     
@@ -95,7 +95,7 @@
     padding:10vh 0 10vh 0;
 }
 
-.kit__items{
+.kit_items{
     width:31%;
     float:left;
     margin-bottom:5vh;

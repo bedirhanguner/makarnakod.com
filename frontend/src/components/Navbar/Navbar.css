@@ -8,14 +8,14 @@
   z-index: 999;
 }
 
-.navbar-container {
+.navbar_container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 12vh;
 }
 
-.navbar-logo {
+.navbar_logo {
   color: rgb(246, 242, 239);
   justify-self: start;
   padding-left: 10vw;
@@ -31,7 +31,7 @@
   font-size: 1.8rem;
 }
 
-.nav-menu {
+.nav_menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
@@ -40,14 +40,14 @@
   justify-content: start;
 }
 
-.nav-item {
+.nav_item {
   height: 80px;
 }
 
 .logo{
   color:#6cadd8;
 }
-.nav-links {
+.nav_links {
   color: rgb(246, 242, 239);
   display: flex;
   align-items: center;
@@ -56,7 +56,7 @@
   height: 100%;
 }
 
-.nav-links:hover {
+.nav_links:hover {
   border-bottom: 4px solid #6cadd8;
   transition: all 0.2s ease-out;
   color: rgb(246, 242, 239);
@@ -69,15 +69,15 @@
   left:0;
 }
 
-.nav-links-mobile {
+.nav_links_mobile {
   display: none;
 }
 
-.menu-icon {
+.menu_icon {
   display: none;
 }
 
-.nav-btn {
+.nav_btn {
   width:100%;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@
     z-index: 999;
   }
   
-  .nav-menu {
+  .nav_menu {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -110,7 +110,7 @@
     color:rgb(28, 32, 36);
   }
 
-  .nav-menu.active {
+  .nav_menu.active {
     background: rgb(28, 32, 36);
     left: 0;
     opacity: 1;
@@ -118,24 +118,24 @@
     z-index: 1;
   }
 
-  .nav-links {
+  .nav_links {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
   }
 
-  .nav-links:hover {
+  .nav_links:hover {
     background-color: rgb(246, 242, 239);
     color: #242424;
     border-radius: 0;
   }
 
-  .navbar-logo {
+  .navbar_logo {
     top: 0;
     left: 0;
   }
-  .menu-icon {
+  .menu_icon {
     font-size: 2rem;
     display:flex;
     width:100%;
@@ -148,7 +148,7 @@
     font-size: 2rem;
   }
 
-  .nav-links-mobile {
+  .nav_links_mobile {
     display: block;
     text-align: center;
     margin: 2rem auto;
@@ -163,12 +163,12 @@
     transition: all 0.3s ease-out;
   }
 
-  .nav-links-mobile:hover {
+  .nav_links_mobile:hover {
     background: rgb(246, 242, 239);
     color: #242424;
     transition: 250ms;
   }
-  .nav-btn {
+  .nav_btn {
     justify-content: center;
     display: flex;
     align-items: center;

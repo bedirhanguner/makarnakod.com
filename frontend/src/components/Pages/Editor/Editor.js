@@ -33,7 +33,7 @@ function Editor({ userInputReceiver, lang }) {
 
   useEffect(() => {
     setCode(languageTemplates[lang]);
-  }, [lang]);
+  }, [userInputReceiver, lang]);
 
   return (
     <AceEditor

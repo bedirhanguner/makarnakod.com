@@ -58,8 +58,8 @@ function EditorLayout() {
   return (
     <>
       <div className="editor">
-        <div className="editor__info">
-          <div className="editor__selectbox">
+        <div className="editor_info">
+          <div className="editor_selectbox">
             <Select
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 9999 }) }}
               menuPortalTarget={document.body}
@@ -72,30 +72,30 @@ function EditorLayout() {
               onChange={(lang) => setData({ ...data, language: lang.value })}
             />
           </div>
-          <div className="editor__logos">
+          <div className="editor_logos">
             <i className="fas fa-expand"></i>
           </div>
-          <div className="editor__logos">
+          <div className="editor_logos">
             <i className="fas fa-undo"></i>
           </div>
         </div>
-        <div className="editor__container">
+        <div className="editor_container">
           <Editor userInputReceiver={editorToLayout} lang={data.language} />
         </div>
-        <div className="editor__submit">
+        <div className="editor_submit">
           <Button buttonStyle="btn--outline" onClick={submitClick}>
             Çalıştır
           </Button>
         </div>
-        <div className="editor__output">
-          <div className="editor__output__header">sonuç:</div>
-          <div className="editor__output__content">
-            <div className={`${!isRunning ? "" : "output__hidden"}`}>
+        <div className="editor_output">
+          <div className="editor_output_header">sonuç:</div>
+          <div className="editor_output_content">
+            <div className={`${!isRunning ? "" : "output_hidden"}`}>
               {codeOutput}
             </div>
             <div
-              className={`loading__animation ${
-                isRunning ? "" : "output__hidden"
+              className={`loading_animation ${
+                isRunning ? "" : "output_hidden"
               }`}
             >
               <ReactLoading type="bars"></ReactLoading>çalıştırılıyor...

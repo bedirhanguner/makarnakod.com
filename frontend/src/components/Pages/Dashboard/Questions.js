@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom';
 function Questions(props) {
   return (
     <> 
-        <Link className='subject__items' to={props.path}>
-            <div className='subject__items__header'>
+        <Link className='subject_items' to={props.path}>
+            <div className='subject_items_header'>
                 {props.text}
             </div>
-            <div className='subject__items__rate'>
+            <div className='subject_items_rate'>
                 {props.rate}
             </div>
-            <div className='subject__items__button'>
+            <div className='subject_items_button'>
                 <Button
-                buttonStyle='btn--rounded--black'
-                buttonSize='btn--large'
+                buttonStyle='btn_rounded_black'
+                buttonSize='btn_large'
                 >
                 soruları gör
                 </Button>
