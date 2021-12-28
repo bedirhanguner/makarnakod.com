@@ -12,7 +12,7 @@ function ProblemDescription(props) {
         const requestOptions = {
             method: "GET",
         };
-        const data = await fetch(getBackendURL() + '/algoritma/' + paths[paths.length - 1], requestOptions);
+        const data = await fetch(getBackendURL() + '/'+paths[1]+'/' + paths[paths.length - 1], requestOptions);
         const problem = await data.json();
         setProblem(problem);
     }
@@ -25,20 +25,20 @@ function ProblemDescription(props) {
         <>
             <Navbar />
             <div className='problem'>
-                <div className='problem__description__wrapper'>
-                    <div className='problem__info__wrapper'>
+                <div className='problem_description_wrapper'>
+                    <div className='problem_info_wrapper'>
                         <h1> {problem.displayname} </h1>
                         <h3> {problem.level}, {problem.difficulty}</h3>
                     </div>
-                    <div className='problem__description__content'>
-                        <div className='problem__description__text'>
+                    <div className='problem_description_content'>
+                        <div className='problem_description_text'>
                             {problem.description}
 
                             {problem.examples && problem.examples.map((example, index) => {
                                 return (
                                     <div>
                                         <br /> <p>örnek {index + 1}:</p><br />
-                                        <div className='problem__description__text__example'>
+                                        <div className='problem_description_text_example'>
                                             {example}
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@ function ProblemDescription(props) {
                         </div>
                     </div>
                 </div>
-                <div className='problem__solution__wrapper'>
+                <div className='problem_solution_wrapper'>
                     <EditorLayout />
                 </div>
             </div>

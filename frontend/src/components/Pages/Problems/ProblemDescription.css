@@ -10,7 +10,7 @@
     width:100%;
   }
 
-.problem__info__wrapper {
+.problem_info_wrapper {
   background: rgb(55, 62, 70);
   height: 60px;
   display: relative;
@@ -19,7 +19,7 @@
   color: rgb(246, 242, 239);
   }
 
-.problem__description__wrapper {
+.problem_description_wrapper {
     background-color: rgb(38, 43, 49);
     width: 49.5%;
     height: 100vh;
@@ -28,23 +28,23 @@
     float: left;
   }
 
-.problem__description__content{
+.problem_description_content{
   white-space: pre-line;
   padding: 2vw 2vw 2vw 2vw
   }
 
-.problem__description__text{
+.problem_description_text{
   white-space: pre-wrap;
   color: rgb(246, 242, 239);
   }
 
-  .problem__description__text__example{
+  .problem_description_text_example{
     background-color: rgb(54, 57, 61);
     padding: 1rem 1rem 1rem 1rem;
   }
   
 
-.problem__solution__wrapper {
+.problem_solution_wrapper {
   background-color: rgb(38, 43, 49);
   width: 49.5%;
   height: 100vh;
@@ -56,7 +56,7 @@
   }
 
   @media screen and (max-width: 960px) {
-    .problem__info { 
+    .problem_info { 
      float: none;
      margin-right:0;
      width:auto;

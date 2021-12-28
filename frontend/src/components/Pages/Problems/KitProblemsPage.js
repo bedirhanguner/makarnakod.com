@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './ProblemRow.css';
-import ProblemRow from './ProblemRow';
+import KitProblemsRow from './KitProblemsRow';
 import Checkbox from '../../Checkbox/Checkbox';
 import getBackendURL from '../../../helpers/getURL';
 
-function ProblemsPage(props) {
+function KitProblemsPage(props) {
 
     const [problem, setProblem] = useState([]);
     const fetchProblem = async () => {
@@ -25,26 +25,19 @@ function ProblemsPage(props) {
     <div className='dashboard'>
       <div className="dashboard_info">
         <h1> {props.domain} </h1>
-        <h3>{props.domain} sorularına göz at</h3>
+        <h3>{props.domain} kiti ile kendizi geliştirin</h3>
       </div>
 
       <div className='dashboard_container'>
         <div className='dashboard_wrapper'>
-        <div className='row_item_header'>
-            <div className='row_item_text'><h4>soru</h4></div>
-            <div className='row_item_level'><h4>seviye</h4></div>
-            <div className='row_item_difficulty'><h4>zorluk</h4></div>
-            <div className='row_item_acceptance'><h4>başarı oranı</h4></div>
-          </div>
-          <div className='horizontal'> <hr/> </div>
           {problem.map((example) => {
             return (
-              <ProblemRow
+              <KitProblemsRow
                 text={example.displayname}
                 difficulty={example.difficulty}
                 level={example.level}
                 acceptance={example.acceptance}
-                path={'/'+address+'/'+example.name}
+                path={'/'+ address +'/'+example.name}
               />  
               )
             })
@@ -100,4 +93,4 @@ function ProblemsPage(props) {
   );
 }
 
-export default ProblemsPage;
+export default KitProblemsPage;

@@ -37,37 +37,7 @@
     padding: 8px 20px;
     font-size: 18px;
   }
-
-  .subjects{
-    color: #6cadd8;
-    float: left;
-    padding-right: 0.3rem;
-  }
-
-  .algorithm{
-    color: #fca535;
-    float: left;
-    padding-right: 0.3rem;
-  }
-
-  .database{
-    color: #b66cd8;
-    float: left;
-    padding-right: 0.3rem;
-  }
-
-  .script{
-    color: #62df49;
-    float: left;
-    padding-right: 0.3rem;
-  }
-
-  .data-structures{
-    color: #f35151;
-    float: left;
-    padding-right: 0.3rem;
-  }
-
+  
   .horizontal{
     display: absolute;
   }
@@ -116,13 +86,14 @@
     display: flex;
     flex: 1;
     background-color: rgb(55, 62, 70);
-    
+    box-shadow: 0 10px 16px rgb(38, 43, 49);
   }
 
   .row_item:hover {
     display: flex;
     flex: 1;
     background-color: rgb(38, 43, 49);
+    box-shadow: 0 10px 16px rgb(28, 32, 36);
   }
   
   .row_item_link {
@@ -137,11 +108,14 @@
     padding: 20px 30px 30px;
     overflow: hidden;
     color: rgb(246, 242, 239);
+    display:flex;
+    justify-content: space-between
   }
   
   .row_item_info:hover {
     padding: 20px 30px 30px;
     overflow: hidden;
+    justify-content: space-between;
     color: #6cadd8;
   }
 
@@ -157,18 +131,21 @@
     line-height: 24px;
     width:55%;
   }
+
   .row_item_difficulty {
     float:left;
     font-size: 18px;
     line-height: 24px;
     width:15%;
   }
+
   .row_item_level {
     float:left;
     font-size: 18px;
     line-height: 24px;
     width:15%;
   }
+
   .row_item_acceptance {
     float:left;
     font-size: 18px;
@@ -176,6 +153,37 @@
     width:15%;
   }
 
+  .kit_row_items{
+    width:80%;
+    float: left;
+  }
+
+  .kit_row_button{
+    width:20%;
+    float:right;
+  }
+
+  .kit_row_item_text
+  {
+    font-size: 24px;
+    line-height: 32px;
+    width: 100%;
+  }
+
+  .kit_row_item_text:hover
+  {
+    font-size: 24px;
+    line-height: 32px;
+    width: 100%;
+  }
+  
+
+  .kit_row_item_description
+  {
+    font-size: 16px;
+    line-height: 28px;
+    width: 100%;
+  }
 
   @media screen and (max-width: 820px) {
     .dashboard_container {

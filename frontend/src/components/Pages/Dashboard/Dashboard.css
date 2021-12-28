@@ -20,7 +20,7 @@
     float:left;
     margin-bottom:5vh;
     background: rgb(55, 62, 70);
-    border: 1px solid rgb(246, 242, 239);
+    border: 2px solid rgb(28, 32, 36);
     border-radius:10px;
     text-decoration: none;
 }
@@ -30,8 +30,9 @@
     float:left;
     color:rgb(246, 242, 239);
     margin-bottom:5vh;
-    background: rgb(74, 82, 92);
-    border: 1px solid rgb(246, 242, 239);
+    background: rgb(38, 43, 49);
+    border: 2px solid rgb(28, 32, 36);
+    box-shadow: 0 10px 16px rgb(28, 32, 36);
     border-radius:10px;
     text-decoration: none;
 }
@@ -100,7 +101,18 @@
     float:left;
     margin-bottom:5vh;
     background: rgb(55, 62, 70);
-    border: 1px solid rgb(246, 242, 239);
+    border: 2px solid rgb(28, 32, 36);
     border-radius:10px;
     text-decoration: none;
 }
+.kit_items:hover{
+    width:31%;
+    float:left;
+    margin-bottom:5vh;
+    background: rgb(38, 43, 49);
+    border: 2px solid rgb(28, 32, 36);
+    box-shadow: 0 10px 16px rgb(28, 32, 36);
+    border-radius:10px;
+    text-decoration: none;
+}
+
