@@ -1,9 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
+import getBackendURL from '../../helpers/getURL';
+
 import './Navbar.css';
 
+import { UserContext } from "../../context/UserContext"
+
+
+
 function Navbar() {
+
+  function logOut() {
+    setUserContext({ loggedIn: false, email: '' })
+    fetch(getBackendURL() + "/users/logout", { method: "POST" })
+  }
+
+  const [userContext, setUserContext] = useContext(UserContext)
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -81,8 +95,14 @@ function Navbar() {
         </div>
 
         <div className='nav_btn'>
-          {button && <Link to='/uye-ol'><Button buttonStyle='btn_outline'>üye ol</Button></Link>}
-          {button && <Link to='/giris-yap'><Button buttonStyle='btn_primary'>giriş yap</Button></Link>}
+          {userContext.loggedIn ? (
+            <Button onClick={logOut} buttonStyle='btn_outline'>Çıkış</Button>
+          ) : (
+            <div>
+              <Link to='/uye-ol'><Button buttonStyle='btn_outline'>üye ol</Button></Link>
+              <Link to='/giris-yap'><Button buttonStyle='btn_primary'>giriş yap</Button></Link>
+            </div>
+          )}
         </div>
         <div className='menu_icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

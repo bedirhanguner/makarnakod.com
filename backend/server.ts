@@ -1,6 +1,5 @@
 import express = require('express');
 import cors = require('cors');
-import bcrypt = require('bcrypt');
 import session = require('express-session');
 import cookieParser = require('cookie-parser');
 

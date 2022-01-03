@@ -3,7 +3,7 @@ import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import getBackendURL from '../../../helpers/getURL';
 
-function Home() {
+function Register() {
     return (
         <>
             <Navbar />
@@ -32,4 +32,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Register;

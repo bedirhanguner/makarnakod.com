@@ -33,11 +33,27 @@ UsersRouter.post('/register', async (req, res) => {
   }
 });
 
-UsersRouter.post(
-  '/login',
-  passport.authenticate('local', {
-    successRedirect: 'http://localhost:3000/',
-    failureRedirect: 'http://localhost:3000/giris-yap',
-    failureFlash: false,
-  })
-);
+UsersRouter.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) {
+      return res.status(500).send({ message: 'Something went wrong' });
+    }
+    if (!user) {
+      return res.status(401).send({ message: info.message });
+    }
+    return res.status(200).send({ message: 'Logged in', email: user.email });
+  })(req, res, next);
+});
+
+//get current user
+UsersRouter.get('/current', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.status(200).send({ email: req.user });
+  }
+});
+
+//logout
+UsersRouter.get('/logout', (req, res) => {
+  req.logout();
+  res.status(200).send('Logged out');
+});
