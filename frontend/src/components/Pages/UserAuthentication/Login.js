@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react"
 import { useHistory } from 'react-router';
-
 import { UserContext } from "../../../context/UserContext"
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
 import getBackendURL from '../../../helpers/getURL';
-
+import './UserAuthentication.css'
 
 function Login() {
     const routerHistory = useHistory();
@@ -38,20 +37,27 @@ function Login() {
     return (
         <>
             <Navbar />
-            <div>
-                {/* login form */}
-                <h1>Login</h1>
-                <label>
-                    Email:
-                    <input type="text" name="email" onChange={e => setEmail(e.target.value)} required />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" name="password" onChange={e => setPassword(e.target.value)} required />
-                </label>
-                <input type="submit" onClick={log_in} value="Submit" />
+            <div className='user_auth_main'>
+                <div className='user_auth_wrapper'>
+                    <div className='user_auth_container'>
+                        <div className='user_auth_signature'>
+                            <div className='user_auth_logo'>
+                                <i className="fas fa-pastafarianism" />
+                            </div>
+                            makarnakod
+                        </div>
+                        <div className='user_auth_form'>
+                            <form action={getBackendURL() + '/users/register'} method='POST'>
+                                <div className='user_auth_inputs'>
+                                    <input className='user_auth_form_element' type="text" name="email" placeholder='e-posta adresi' onChange={e => setEmail(e.target.value)} required />
+                                    <input className='user_auth_form_element' type="password" name="password" placeholder='parola' onChange={e => setPassword(e.target.value)} required />
+                                    <input className='user_auth_form_button' type="submit" value="giriş yap" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            {/*<Transition />*/}
             <Footer />
         </>
     );

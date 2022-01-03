@@ -9,26 +9,26 @@ import FifteenDaysOfPythonPage from './components/Pages/Problems/FifteenDaysOfPy
 import KitProblemsPage from './components/Pages/Problems/KitProblemsPage';
 import Login from './components/Pages/UserAuthentication/Login';
 import Register from './components/Pages/UserAuthentication/Register';
-
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 function App() {
   return (
     <>
       <Router>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/algoritma/ucbes' exact component={ProblemPage} />
-          <Route path='/algoritma/en-uzun-ek' exact component={ProblemPage} />
-          <Route path='/algoritma' exact component={AlgorithmPage} />
-          <Route path='/veri-yapilari' exact component={DataStructuresPage} />
-          <Route path='/15-gunde-python-kiti' exact component={FifteenDaysOfPythonPage} />
-          <Route path='/15-gunde-python-kiti/merhaba-dunya' exact component={ProblemPage} />
-          <Route path='/15-gunde-python-kiti/aritmetik-operatorler' exact component={ProblemPage} />
-          <Route path='/15-gunde-python-kiti/python-if-else' exact component={ProblemPage} />
-
-          <Route path='/giris-yap' exact component={Login} />
-          <Route path='/uye-ol' exact component={Register} />
-
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/algoritma/ucbes' exact component={ProblemPage} />
+            <Route path='/algoritma/en-uzun-ek' exact component={ProblemPage} />
+            <Route path='/algoritma' exact component={AlgorithmPage} />
+            <Route path='/veri-yapilari' exact component={DataStructuresPage} />
+            <Route path='/15-gunde-python-kiti' exact component={FifteenDaysOfPythonPage} />
+            <Route path='/15-gunde-python-kiti/merhaba-dunya' exact component={ProblemPage} />
+            <Route path='/15-gunde-python-kiti/aritmetik-operatorler' exact component={ProblemPage} />
+            <Route path='/15-gunde-python-kiti/python-if-else' exact component={ProblemPage} />
+            <Route path='/giris-yap' exact component={Login} />
+            <Route path='/uye-ol' exact component={Register} />
+          </Switch>
+        </ScrollToTop>
       </Router>
     </>
   );

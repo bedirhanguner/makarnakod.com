@@ -45,7 +45,7 @@ function Navbar() {
           <Link to='/' className='navbar_logo' onClick={closeMobileMenu}>
             makarnakod
             <div className='logo'>
-              <i className="fas fa-fingerprint" />
+              <i className="fas fa-pastafarianism" />
             </div>
           </Link>
           {/* TODO menu active should go down instead of up at the problem pages */}
