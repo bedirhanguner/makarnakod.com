@@ -1,7 +1,7 @@
 import React from 'react'
-import HeroSection from '../../HeroSection/HeroSection';
 import Navbar from '../../Navbar/Navbar';
 import Footer from '../../Footer/Footer';
+import getBackendURL from '../../../helpers/getURL';
 
 function Home() {
     return (
@@ -10,7 +10,7 @@ function Home() {
             <div>
                 {/* login form */}
                 <h1>Login</h1>
-                <form>
+                <form action={getBackendURL() + '/users/login'} method='POST'>
                     <label>
                         Email:
                         <input type="text" name="email" required />

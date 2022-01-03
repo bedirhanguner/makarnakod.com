@@ -1,13 +1,11 @@
-import { IUserAuth, UserAuthModel } from '../models/userModel';
+import { UserAuthModel } from '../models/userModel';
+import mongoose = require('mongoose');
 
-export function getUserByEmail(email: string): IUserAuth | null {
-  UserAuthModel.findOne({ email: email }).exec((err, data) => {
-    if (err) throw err;
-    if (data) {
-      return data;
-    } else {
-      return null;
-    }
-  });
-  throw new Error('Something went wrong');
+export function getUserByEmail(email: string) {
+  return UserAuthModel.findOne({ email: email });
+}
+
+export function getUserById(id: string) {
+  //convert to mongoose id
+  return UserAuthModel.findById(id);
 }

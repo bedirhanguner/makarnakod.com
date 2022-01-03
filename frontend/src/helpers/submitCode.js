@@ -13,6 +13,8 @@ const submitCode = (data) => {
       language: data.language,
       code: data.code,
     }),
+    //include credentials for authentication
+    credentials: "include",
   };
   return fetch(`${getBackendURL()}/submitCode`, requestOptions)
 };
