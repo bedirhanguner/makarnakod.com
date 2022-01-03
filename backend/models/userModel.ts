@@ -8,11 +8,29 @@ export interface IUserAuth {
   RegisteredAt: Date;
 }
 
-const userSchema = new Schema<IUserAuth>({
-  _id: { type: Schema.Types.ObjectId },
+export interface IUser {
+  _id?: ObjectId;
+  FirstName: string;
+  LastName: string;
+  BirthDate: Date;
+  ProfilePictureURL: string;
+  AuthId: ObjectId;
+}
+
+const userAuthSchema = new Schema<IUserAuth>({
   email: { type: String, required: true },
   password: { type: String, required: true },
   RegisteredAt: { type: Date, required: true },
 });
 
-export const UserAuthModel = model<IUserAuth>('usersAuth', userSchema);
+const UserSchema = new Schema<IUser>({
+  FirstName: { type: String, required: true },
+  LastName: { type: String, required: true },
+  BirthDate: { type: Date },
+  ProfilePictureURL: { type: String },
+  AuthId: { type: SchemaTypes.ObjectId, required: true },
+});
+
+export const UserAuthModel = model<IUserAuth>('usersAuth', userAuthSchema);
+
+export const UserModel = model<IUser>('users', UserSchema);

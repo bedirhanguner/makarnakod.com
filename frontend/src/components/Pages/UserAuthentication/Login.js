@@ -15,16 +15,21 @@ function Login() {
     const [userContext, setUserContext] = useContext(UserContext)
 
 
-    function log_in() {
-        fetch(getBackendURL() + "/users/login", {
+    function log_in(event) {
+        event.preventDefault();
+
+        const requestOptions = {
             method: "POST",
-            credentials: "include",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
-        })
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        };
+
+        fetch(getBackendURL() + "/users/login", requestOptions)
             .then(async response => {
                 const data = await response.json()
-                console.log(data);
                 setUserContext({ loggedIn: true, email: data.email })
             })
             .then(() => {
@@ -47,7 +52,7 @@ function Login() {
                             makarnakod
                         </div>
                         <div className='user_auth_form'>
-                            <form action={getBackendURL() + '/users/register'} method='POST'>
+                            <form onSubmit={log_in}>
                                 <div className='user_auth_inputs'>
                                     <input className='user_auth_form_element' type="text" name="email" placeholder='e-posta adresi' onChange={e => setEmail(e.target.value)} required />
                                     <input className='user_auth_form_element' type="password" name="password" placeholder='parola' onChange={e => setPassword(e.target.value)} required />
