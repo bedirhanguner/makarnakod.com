@@ -1,18 +1,15 @@
 import { Schema, model, connect } from 'mongoose';
 
-export interface IUser {
-  username: string;
-  fullname: string;
-  age: number;
-  entrydate?: Date;
+export interface IUserAuth {
+  email: string;
+  password: string;
+  RegisteredAt: Date;
 }
 
-const userSchema = new Schema<IUser>({
-  // _id
-  username: { type: String, required: true },
-  fullname: { type: String, required: true },
-  age: { type: Number, required: true },
-  entrydate: { type: Date, default: Date.now },
+const userSchema = new Schema<IUserAuth>({
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  RegisteredAt: { type: Date, required: true },
 });
 
-export const User = model<IUser>('users', userSchema);
+export const UserAuthModel = model<IUserAuth>('usersAuth', userSchema);

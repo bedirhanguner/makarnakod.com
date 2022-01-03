@@ -1,5 +1,6 @@
 import express = require('express');
 import cors = require('cors');
+import bcrypt = require('bcrypt');
 import { createCodeFile, deleteCodeFile } from './helpers/fileOps';
 import { executeCode } from './helpers/codeExecuter';
 import { prepareUserCodeExecute } from './helpers/helper';

@@ -31,7 +31,7 @@ function Navbar() {
           <Link to='/' className='navbar_logo' onClick={closeMobileMenu}>
             makarnakod
             <div className='logo'>
-            <i className="fas fa-fingerprint"/>
+              <i className="fas fa-fingerprint" />
             </div>
           </Link>
           {/* TODO menu active should go down instead of up at the problem pages */}
@@ -78,15 +78,15 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-        </div>  
-        
+        </div>
+
         <div className='nav_btn'>
-            {button && <Button buttonStyle='btn_outline'>üye ol</Button>}
-            {button && <Button buttonStyle='btn_primary'>giriş yap</Button>}
-          </div>
+          {button && <Link to='/uye-ol'><Button buttonStyle='btn_outline'>üye ol</Button></Link>}
+          {button && <Link to='/giris-yap'><Button buttonStyle='btn_primary'>giriş yap</Button></Link>}
+        </div>
         <div className='menu_icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>   
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
       </nav>
     </>
   );
