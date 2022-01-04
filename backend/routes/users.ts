@@ -27,12 +27,26 @@ UsersRouter.post('/register', async (req, res) => {
   if (await getUserByEmail(userAuth.email)) {
     res.status(409).send('User already exists'); // 409 IS the correct response code for conflict, but it could be a security issue for bruteforce attacks.
   } else {
-    let response = await createUser(userAuth, user);
-    res
-      .status(response.code)
-      .send({ message: response.message, email: userAuth.email });
+    let rspns = await createUser(userAuth, user);
+    if (rspns.code === 200) {
+      req.logIn(userAuth, (err) => {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+        console.log(req.user);
+
+        res.redirect('/users/current');
+      });
+    }
   }
 });
+
+type User = {
+  // Jank af, typescript definitions for passport.js are weird so have to override them.
+  email: string;
+  userInfo: any;
+};
 
 UsersRouter.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
@@ -47,21 +61,22 @@ UsersRouter.post('/login', (req, res, next) => {
         return res.status(500).send({ message: 'Something went wrong' });
       }
     });
-    return res.status(200).send({ message: 'Logged in', email: user.email });
+    res.redirect('/users/current');
   })(req, res, next);
 });
 
 //get current user
 UsersRouter.get('/current', (req, res) => {
+  let user: User = req.user as User;
   if (req.isAuthenticated()) {
-    res.status(200).send({ email: req.user });
+    res.status(200).send({ email: user.email, user: user.userInfo });
   } else {
-    res.status(401).send({ message: 'Unauthorized' });
+    res.status(404).send({ message: 'Not logged in' });
   }
 });
 
 //logout
-UsersRouter.get('/logout', (req, res) => {
+UsersRouter.post('/logout', (req, res) => {
   req.logout();
   res.status(200).send('Logged out');
 });

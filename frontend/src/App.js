@@ -6,7 +6,6 @@ import ProblemPage from './components/Pages/Problems/ProblemDescription';
 import AlgorithmPage from './components/Pages/Problems/Algorithm/AlgorithmPage';
 import DataStructuresPage from './components/Pages/Problems/DataStructures/DataStructuresPage';
 import FifteenDaysOfPythonPage from './components/Pages/Problems/FifteenDaysOfPython/FifteenDaysOfPythonPage';
-import KitProblemsPage from './components/Pages/Problems/KitProblemsPage';
 import Login from './components/Pages/UserAuthentication/Login';
 import Register from './components/Pages/UserAuthentication/Register';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';

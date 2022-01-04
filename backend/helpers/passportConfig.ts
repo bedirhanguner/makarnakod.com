@@ -3,7 +3,7 @@ import { getUserByEmail, getUserById } from '../userAuths/findUser';
 
 import bcrypt = require('bcrypt');
 import passport = require('passport');
-import { UserAuthModel } from '../models/userModel';
+import { IUser, UserAuthModel, UserModel } from '../models/userModel';
 
 const authenticateUser = async (email: string, password: string, done: any) => {
   const user = await getUserByEmail(email);
@@ -36,8 +36,17 @@ export function initializePassport() {
 
   passport.deserializeUser(async (user: User, done) => {
     let userAuth = await UserAuthModel.findById(user._id);
-
-    return done(null, userAuth?.toObject().email);
+    let userData = await UserModel.findOne({ AuthId: user._id });
+    let userObject = userData?.toObject() as IUser;
+    return done(null, {
+      email: userAuth?.toObject().email,
+      userInfo: {
+        FirstName: userObject.FirstName,
+        LastName: userObject.LastName,
+        BirthDate: userObject.BirthDate,
+        ProfilePictureURL: userObject.ProfilePictureURL,
+      },
+    });
   });
 
   return passport;

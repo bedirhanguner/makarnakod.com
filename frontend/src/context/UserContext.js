@@ -22,7 +22,7 @@ const UserProvider = props => {
 			.then(response => response.json())
 			.then(data => {
 				if (data.email) {
-					setState({ loggedIn: true, email: data.email })
+					setState({ loggedIn: true, email: data.email, userInfo: data.user })
 				}
 			})
 	}

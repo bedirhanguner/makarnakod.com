@@ -12,14 +12,14 @@ import { UserContext } from "../../context/UserContext"
 function Navbar() {
 
   function logOut() {
-    setUserContext({ loggedIn: false, email: '' })
-    fetch(getBackendURL() + "/users/logout", { method: "POST" })
+    fetch(getBackendURL() + "/users/logout", { method: "POST", credentials: "include" })
+    setUserContext({ loggedIn: false, email: '', userInfo: {} })
   }
 
   const [userContext, setUserContext] = useContext(UserContext)
 
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);

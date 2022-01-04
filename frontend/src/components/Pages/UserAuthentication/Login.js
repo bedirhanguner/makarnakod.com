@@ -12,7 +12,7 @@ function Login() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [, setUserContext] = useContext(UserContext)
 
 
     function log_in(event) {
@@ -20,6 +20,7 @@ function Login() {
 
         const requestOptions = {
             method: "POST",
+            credentials: 'include',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 email: email,
@@ -30,7 +31,7 @@ function Login() {
         fetch(getBackendURL() + "/users/login", requestOptions)
             .then(async response => {
                 const data = await response.json()
-                setUserContext({ loggedIn: true, email: data.email })
+                setUserContext({ loggedIn: true, email: data.email, userInfo: data.user })
             })
             .then(() => {
                 routerHistory.push('/');

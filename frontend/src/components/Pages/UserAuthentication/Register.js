@@ -13,7 +13,7 @@ function Register() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
 
-    const [userContext, setUserContext] = useContext(UserContext)
+    const [, setUserContext] = useContext(UserContext)
 
     const routerHistory = useHistory();
 
@@ -23,6 +23,7 @@ function Register() {
         const requestOptions = {
             method: "POST",
             headers: { "Content-Type": "application/json" },
+            credentials: 'include',
             body: JSON.stringify({
                 email: email,
                 password: password,
