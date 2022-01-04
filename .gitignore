@@ -107,5 +107,6 @@ dist
 backend/codeExecuter/python/fizzbuzz/__pycache__
 
 backend/build/
+frontend/build/
 
 backend/userSubmittedCodes/

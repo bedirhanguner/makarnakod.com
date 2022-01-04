@@ -2,6 +2,7 @@ import express = require('express');
 import cors = require('cors');
 import session = require('express-session');
 import cookieParser = require('cookie-parser');
+import MongoStore = require('connect-mongo');
 
 import { createCodeFile, deleteCodeFile } from './helpers/fileOps';
 import { executeCode } from './helpers/codeExecuter';
@@ -28,6 +29,15 @@ app.use(
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
     },
+    store: MongoStore.create({
+      //persistent sessions
+      mongoUrl: process.env.db_uri || 'mongodb://localhost/',
+      ttl: 1000 * 60 * 60 * 24 * 7, // 1 week
+      autoRemove: 'native',
+      crypto: {
+        secret: process.env.SESSION_SECRET || 'secret',
+      },
+    }),
   })
 );
 app.use(passport.initialize());
@@ -36,6 +46,8 @@ app.use(passport.session());
 app.use('/', routesHandler); // register routes
 
 app.post('/submitCode', async (req, res) => {
+  console.log(req.user);
+
   // TODO: create route for this
   let executionProps = prepareUserCodeExecute(
     req.ip,
