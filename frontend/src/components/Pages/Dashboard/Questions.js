@@ -13,13 +13,13 @@ function Questions(props) {
             <div className='subject_items_rate'>
                 {props.rate}
             </div>
-            <div className='subject_items_button'>
-                <Button
-                buttonStyle='btn_rounded_black'
-                buttonSize='btn_large'
-                >
-                soruları gör
-                </Button>
+                <div className='subject_items_button'>
+                    <Button
+                    buttonStyle='btn_rounded_black'
+                    buttonSize='btn_large'
+                    >
+                    soruları gör
+                    </Button>
             </div>
         </Link>
     </>

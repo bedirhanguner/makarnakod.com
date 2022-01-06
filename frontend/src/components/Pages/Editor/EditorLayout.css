@@ -7,10 +7,9 @@
 
 .editor_info {
   background: rgb(55, 62, 70);
-  height: 60px;
+  height: 10vh;
   display: relative;
   font-size: 0.8rem;
-  padding-left: 3vw;
   color: rgb(246, 242, 239);
   overflow: hidden;
   flex-direction: row;
@@ -18,7 +17,7 @@
 
 .editor_selectbox {
   width: 10vw;
-  padding-top: 0.6rem;
+  padding-top: 2.5vh;
   font-size: 1rem;
   float: left;
 }
@@ -27,17 +26,12 @@
   display: relative;
   float: right;
   font-size: 1.5rem;
-  padding-top: 0.8rem;
+  padding-top: 2.5vh;
   padding-right: 1.5rem;
   color: rgb(246, 242, 239);
 }
 
 .editor_logos:hover {
-  display: relative;
-  float: right;
-  font-size: 1.5rem;
-  padding-top: 0.8rem;
-  padding-right: 1.5rem;
   color: rgb(197, 191, 186);
 }
 

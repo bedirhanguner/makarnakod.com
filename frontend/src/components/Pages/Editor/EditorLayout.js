@@ -83,8 +83,8 @@ function EditorLayout() {
           <Editor userInputReceiver={editorToLayout} lang={data.language} />
         </div>
         <div className="editor_submit">
-          <Button buttonStyle="btn--outline" onClick={submitClick}>
-            Çalıştır
+          <Button buttonStyle="btn_rounded" buttonSize='btn_large' onClick={submitClick}>
+            çalıştır
           </Button>
         </div>
         <div className="editor_output">

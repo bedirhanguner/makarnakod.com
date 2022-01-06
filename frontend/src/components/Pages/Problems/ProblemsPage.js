@@ -24,17 +24,17 @@ function ProblemsPage(props) {
   return (
     <div className='dashboard'>
       <div className="dashboard_info">
-        <h1> {props.domain} </h1>
-        <h3>{props.domain} sorularına göz at</h3>
+        <div className='dashboard_info_header'> {props.domain} </div>
+        <div className='dashboard_info_desc'>{props.domain} sorularına göz at</div>
       </div>
 
       <div className='dashboard_container'>
         <div className='dashboard_wrapper'>
         <div className='row_item_header'>
             <div className='row_item_text'><h4>soru</h4></div>
-            <div className='row_item_level'><h4>seviye</h4></div>
-            <div className='row_item_difficulty'><h4>zorluk</h4></div>
-            <div className='row_item_acceptance'><h4>başarı oranı</h4></div>
+            <div className='row_item_text_other'><h4>seviye</h4></div>
+            <div className='row_item_text_other'><h4>zorluk</h4></div>
+            <div className='row_item_text_other'><h4>başarı oranı</h4></div>
           </div>
           <div className='horizontal'> <hr/> </div>
           {problem.map((example) => {

@@ -73,36 +73,47 @@ function Navbar() {
                 diller
               </Link>
             </li>
+            {userContext.loggedIn ? (
             <li>
               <Link
-                to='/uye-ol'
+                to='/'
                 className='nav_links_mobile'
-                onClick={closeMobileMenu}
+                onClick={logOut}
               >
-                üye ol
+                çıkış yap
               </Link>
             </li>
-            <li>
-              <Link
-                to='/giris-yap'
-                className='nav_links_mobile'
-                onClick={closeMobileMenu}
-              >
-                giriş yap
-              </Link>
-            </li>
+            ) : (
+            <><li>
+                  <Link
+                    to='/uye-ol'
+                    className='nav_links_mobile'
+                    onClick={closeMobileMenu}
+                  >
+                    üye ol
+                  </Link>
+                </li><li>
+                    <Link
+                      to='/giris-yap'
+                      className='nav_links_mobile'
+                      onClick={closeMobileMenu}
+                    >
+                      giriş yap
+                    </Link>
+                  </li></>
+            )}
           </ul>
         </div>
 
         <div className='nav_btn'>
-          {userContext.loggedIn ? (
-            <Button onClick={logOut} buttonStyle='btn_outline'>Çıkış</Button>
-          ) : (
-            <div>
+        {userContext.loggedIn ? (
+              <Link to='/' ><Button onClick={logOut} buttonStyle='btn_outline'>çıkış yap</Button></Link>
+            ) : (
+              <>
               <Link to='/uye-ol'><Button buttonStyle='btn_outline'>üye ol</Button></Link>
               <Link to='/giris-yap'><Button buttonStyle='btn_primary'>giriş yap</Button></Link>
-            </div>
-          )}
+            </>
+            )}
         </div>
         <div className='menu_icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

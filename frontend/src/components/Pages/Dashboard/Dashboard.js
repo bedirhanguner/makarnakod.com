@@ -9,8 +9,8 @@ function Dashboard() {
     <>  
       <div className='dashboard'>
         <div className="dashboard_info">
-          <h1> anasayfa </h1>
-          <h3>sorulara göz at</h3>
+          <div className='dashboard_info_header'> anasayfa </div>
+          <div className='dashboard_info_desc'>sorulara göz at</div>
         </div>
 
         <div className='subject_questions'>
@@ -91,7 +91,7 @@ function Dashboard() {
                 </div>
               <div className='kit_subjects_display'>
                 <Link className='kit_items' to='/mulakat-hazırlanma-kiti'>
-                    <div className='subject_items_header'>
+                    <div className='kit_items_header'>
                         mülakat hazırlanma kiti
                     </div>
 
@@ -106,7 +106,7 @@ function Dashboard() {
                 </Link>
               
               <Link className='kit_items' to='/15-gunde-python-kiti'>
-                  <div className='subject_items_header'>
+                  <div className='kit_items_header'>
                       15 günde python kiti 
                   </div>
 
@@ -121,7 +121,7 @@ function Dashboard() {
               </Link>
 
               <Link className='kit_items' to='/20-gunde-javascript-kiti'>
-                  <div className='subject_items_header'>
+                  <div className='kit_items_header'>
                     20 günde javascript kiti 
                   </div>
 
