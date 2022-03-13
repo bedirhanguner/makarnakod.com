@@ -11,7 +11,6 @@ function Home() {
             <HeroSection />
             <Navbar />
             <Dashboard />
-            {/*<Transition />*/}
             <Footer />
         </>
     );

@@ -4,7 +4,7 @@
   
   .horizontal_short{
     display: absolute;
-    width:50%;
+    width:100%;
     padding-bottom:2rem;
   }
 
@@ -19,20 +19,25 @@
   }
 
   .checkbox_options_container {
-    display: relative;
-    flex-flow: column;
     align-items: center;
     margin: 0 auto;
-    width: 23%;
+    width: 25%;
     float: right;
+    padding: 0 1.5rem 0 1.5rem;
   }
   
   .checkbox_options_wrapper {
-    position: relative;
-    margin: 10vh 0 4.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7vh 0 4.5vh;
   }
 
   .checkbox_options_items{
+    padding:1rem 0 0 0;
+  }
+  
+  .checkbox_options_header{
     color: rgb(246, 242, 239);
     font-size:1.4rem;
     padding-bottom:1rem;
@@ -120,18 +125,26 @@
     width: 100%;
   }
   
-
   .kit_row_item_description{
     font-size: 1rem;
     width: 100%;
   }
 
+  .search__primary{
+    background-color: transparent;
+    width: 100%;
+    color: var(--primary);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+    border-radius: 50px;
+    font-size:1.2rem;
+    margin: 0 0 2rem;
+  }
+
   @media screen and (max-width: 1024px) {
     .dashboard_container {
       width: 75%;
-    }
-    .checkbox_options_container {
-      width: 23%;
     }
 
     .row_item_info {
@@ -155,34 +168,36 @@
       padding-bottom:1rem;
     }
 
-    .horizontal_short{
-      display: absolute;
-      width:70%;
-      padding-bottom:2rem;
+    .checkbox_options_header{
+      font-size:1.1rem;
+      padding-bottom:0.6rem;
     }
 
-    .dashboard_container {
-      width: 80%;
+    .horizontal_short{
+      padding-bottom:1rem;
     }
 
     .checkbox_options_container {
-      width: 17%;
+      width: 25%;
     }
 
     .kit_row_item_text{
       font-size: 1.6rem;
     }
     
-  
     .kit_row_item_description{
       font-size: 0.8rem;
     }
     .btn_large{
       font-size:1.2rem;
     }
+
+    .search__primary{
+      font-size:0.9rem;
+    }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .dashboard_container {
       width: 100%;
       padding-right:10vw;
@@ -205,7 +220,6 @@
     .kit_row_item_text{
       font-size: 1.4rem;
     }
-    
   
     .kit_row_item_description{
       font-size: 0.7rem;

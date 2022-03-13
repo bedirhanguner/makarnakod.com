@@ -172,7 +172,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
     .subject_header{
         margin-bottom:2vh;
         font-size:1.4rem;

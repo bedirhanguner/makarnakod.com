@@ -5,9 +5,18 @@ import Checkbox from '../../Checkbox/Checkbox';
 import getBackendURL from '../../../helpers/getURL';
 
 function ProblemsPage(props) {
-
+  const [searchTerm, setSearchTerm] = useState('');
     const [problem, setProblem] = useState([]);
     const address = props.address;
+
+    function filterProblems(val) {
+      if (searchTerm === '') {
+          return val;
+      }
+      else if (val.displayname.toLowerCase().includes(searchTerm.toLowerCase())) {
+          return val;
+      }
+  }
 
     useEffect(() => {
       const fetchProblem = async () => {
@@ -20,9 +29,7 @@ function ProblemsPage(props) {
         setProblem(problem);
       };
         fetchProblem();
-    }, [address])
-
-    
+    }, [address])    
 
   return (
     <div className='dashboard'>
@@ -40,7 +47,7 @@ function ProblemsPage(props) {
             <div className='row_item_text_other'><h4>başarı oranı</h4></div>
           </div>
           <div className='horizontal'> <hr/> </div>
-          {problem.map((example) => {
+          {problem.filter(filterProblems).map((example) => {
             return (
               <ProblemRow
                 text={example.displayname}
@@ -57,46 +64,49 @@ function ProblemsPage(props) {
       
       <div className='checkbox_options_container'>
         <div className='checkbox_options_wrapper'>
-          <h4 className='checkbox_options_items'>zorluk</h4>
-          <Checkbox 
-          id='kolay'
-          value='kolay'
-          name='kolay'
-          text='kolay'/>
+           <div  className='checkbox_options_items'>
+            <input className='search__primary' type="text" placeholder="sorularda ara..." onChange={(e) => {setSearchTerm(e.target.value)}}/>
+            <h4 className='checkbox_options_header'>zorluk</h4>
+              <Checkbox 
+              id='kolay'
+              value='kolay'
+              name='kolay'
+              text='kolay'/>
 
-          <Checkbox 
-          id='orta'
-          value='orta'
-          name='orta'
-          text='orta'/>
+              <Checkbox 
+              id='orta'
+              value='orta'
+              name='orta'
+              text='orta'/>
 
-          <Checkbox 
-          id='zor'
-          value='zor'
-          name='zor'
-          text='zor'/>
+              <Checkbox 
+              id='zor'
+              value='zor'
+              name='zor'
+              text='zor'/>
 
-        <div className='horizontal_short'> <hr/> </div>
+            <div className='horizontal_short'> <hr/> </div>
 
-        <h4 className='checkbox_options_items'>seviye</h4>
-          <Checkbox 
-          id='baslangic'
-          value='baslangic'
-          name='baslangic'
-          text='başlangıç'/>
+            <h4 className='checkbox_options_header'>seviye</h4>
+              <Checkbox 
+              id='baslangic'
+              value='baslangic'
+              name='baslangic'
+              text='başlangıç'/>
 
-          <Checkbox 
-          id='orta'
-          value='orta'
-          name='orta'
-          text='orta'/>
+              <Checkbox 
+              id='orta'
+              value='orta'
+              name='orta'
+              text='orta'/>
 
-          <Checkbox 
-          id='ileri'
-          value='ileri'
-          name='ileri'
-          text='ileri'/>
-         
+              <Checkbox 
+              id='ileri'
+              value='ileri'
+              name='ileri'
+              text='ileri'/>
+            
+          </div>
         </div>
       </div>
     </div>

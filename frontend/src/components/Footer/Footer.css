@@ -93,7 +93,6 @@
     color: #b1b1b1;
   }
   
-  /* Social Icons */
   .social_icon_link {
     color: rgb(246, 242, 239);
     font-size: 24px;
@@ -137,7 +136,7 @@
     margin-bottom: 16px;
   }
   
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 1024px) {
     .footer_links {
       padding-top: 2rem;
     }
@@ -146,7 +145,6 @@
       width: 100%;
     }
   
-  
     .footer_link_wrapper {
       flex-direction: column;
     }
@@ -154,7 +152,4 @@
     .social_media_wrap {
       flex-direction: column;
     }
-  }
-  
-  @media screen and (max-width: 768px) {
   }

@@ -47,14 +47,14 @@ img {
     margin-left: 4px;
   }
   
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1024px) {
     .hero_container > h1 {
       font-size: 70px;
       margin-top: -150px;
     }
   }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .hero_container > h1 {
       font-size: 50px;
       margin-top: -100px;
