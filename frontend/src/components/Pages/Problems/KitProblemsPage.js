@@ -7,19 +7,21 @@ import getBackendURL from '../../../helpers/getURL';
 function KitProblemsPage(props) {
 
     const [problem, setProblem] = useState([]);
-    const fetchProblem = async () => {
-      const requestOptions = {
-          method: "GET",
-      };
-      const data = await fetch(getBackendURL() + '/'+props.address, requestOptions);
-      const problem = await data.json();
-      setProblem(problem);
-    }
-    useEffect(() => {
-        fetchProblem();
-    }, [])
-
     const address = props.address;
+
+    useEffect(() => {
+      const fetchProblem = async () => {
+        const requestOptions = {
+            method: "GET",
+        };
+        const data = await fetch(getBackendURL() + '/'+ address, requestOptions);
+        const problem = await data.json();
+        setProblem(problem);
+      };  
+      fetchProblem();
+    }, [address])
+
+   
 
   return (
     <div className='dashboard'>

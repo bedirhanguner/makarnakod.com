@@ -7,19 +7,20 @@ import getBackendURL from '../../../helpers/getURL';
 function ProblemDescription(props) {
 
     const [problem, setProblem] = useState({});
-    const fetchProblem = async () => {
-        let paths = props.location.pathname.split('/');
-        const requestOptions = {
-            method: "GET",
-        };
-        const data = await fetch(getBackendURL() + '/'+paths[1]+'/' + paths[paths.length - 1], requestOptions);
-        const problem = await data.json();
-        setProblem(problem);
-    }
+    const pathName = props.location.pathname;
 
     useEffect(() => {
+        const fetchProblem = async () => {
+            let paths = pathName.split('/');
+            const requestOptions = {
+                method: "GET",
+            };
+            const data = await fetch(getBackendURL() + '/'+paths[1]+'/' + paths[paths.length - 1], requestOptions);
+            const problem = await data.json();
+            setProblem(problem);
+        };
         fetchProblem();
-    }, [])
+    }, [pathName])
 
     return (
         <>

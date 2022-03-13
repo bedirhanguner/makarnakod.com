@@ -29,7 +29,7 @@ function Editor({ userInputReceiver, lang }) {
 
   useEffect(() => {
     userInputReceiver(code, lang);
-  }, [lang, code]);
+  }, [userInputReceiver,lang, code]);
 
   useEffect(() => {
     setCode(languageTemplates[lang]);
