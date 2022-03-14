@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './ProblemRow.css';
 import KitProblemsRow from './KitProblemsRow';
-import Checkbox from '../../Checkbox/Checkbox';
 import getBackendURL from '../../../helpers/getURL';
 
 function KitProblemsPage(props) {
@@ -34,7 +33,7 @@ function KitProblemsPage(props) {
         <div className='dashboard_wrapper'>
           {problem.map((example) => {
             return (
-              <KitProblemsRow
+              <KitProblemsRow key={example._id}
                 text={example.displayname}
                 difficulty={example.difficulty}
                 level={example.level}
@@ -49,45 +48,46 @@ function KitProblemsPage(props) {
       
       <div className='checkbox_options_container'>
         <div className='checkbox_options_wrapper'>
-          <h4 className='checkbox_options_items'>zorluk</h4>
-          <Checkbox 
-          id='kolay'
-          value='kolay'
-          name='kolay'
-          text='kolay'/>
+        <h4 className='checkbox_options_header'>zorluk</h4>
+          <div className='checkbox-container'>
+              <input type="checkbox" id="kolay" name="kolay" value="kolay"/>
+              <span className="checkmark"></span>
+              kolay
+          </div>
 
-          <Checkbox 
-          id='orta'
-          value='orta'
-          name='orta'
-          text='orta'/>
+            <div className='checkbox-container'>
+              <input type="checkbox" id="orta" name="orta" value="orta"/>
+              <span className="checkmark"></span>
+              orta
+          </div>
 
-          <Checkbox 
-          id='zor'
-          value='zor'
-          name='zor'
-          text='zor'/>
+          <div className='checkbox-container'>
+              <input type="checkbox" id="zor>" name="zor" value="zor"/>
+              <span className="checkmark"></span>
+              zor
+          </div>
 
-        <div className='horizontal_short'> <hr/> </div>
+          <div className='horizontal_short'> <hr/> </div>
 
-        <h4 className='checkbox_options_items'>seviye</h4>
-          <Checkbox 
-          id='baslangic'
-          value='baslangic'
-          name='baslangic'
-          text='başlangıç'/>
+          <h4 className='checkbox_options_header'>seviye</h4>
 
-          <Checkbox 
-          id='orta'
-          value='orta'
-          name='orta'
-          text='orta'/>
+          <div className='checkbox-container'>
+              <input type="checkbox" id="baslangic>" name="baslangic" value="baslangic"/>
+              <span className="checkmark"></span>
+              başlangıç
+          </div>
 
-          <Checkbox 
-          id='ileri'
-          value='ileri'
-          name='ileri'
-          text='ileri'/>
+          <div className='checkbox-container'>
+              <input type="checkbox" id="ileri>" name="ileri" value="ileri"/>
+              <span className="checkmark"></span>
+              ileri
+          </div>
+
+          <div className='checkbox-container'>
+              <input type="checkbox" id="uzman>" name="uzman" value="uzman"/>
+              <span className="checkmark"></span>
+              uzman
+          </div>
          
         </div>
       </div>

@@ -1,37 +1,98 @@
 import React, { useEffect, useState } from 'react'
 import './ProblemRow.css';
 import ProblemRow from './ProblemRow';
-import Checkbox from '../../Checkbox/Checkbox';
 import getBackendURL from '../../../helpers/getURL';
 
 function ProblemsPage(props) {
+  const address = props.address;
   const [searchTerm, setSearchTerm] = useState('');
-    const [problem, setProblem] = useState([]);
-    const address = props.address;
+  const [problem, setProblem] = useState([]);
+  const [difficulties, setDifficulties] = useState({
+    diffs:['kolay', 'orta', 'zor'],
+  });
+  const [levels, setLevels] = useState({
+    lvls:['baslangic', 'ileri', 'uzman'],
+  });
+  
+  const handleDifficulty = (e) => {
+    const { value, checked } = e.target;
+    const { diffs } = difficulties;
+    if (!checked) {
+      setDifficulties({
+        diffs: diffs.filter((e) => e !== value),  
+      });
+    }else {
+      setDifficulties({
+        diffs: [...diffs, value],
+      });
+    }
+  };
 
-    function filterProblems(val) {
-      if (searchTerm === '') {
-          return val;
+  const handleLevels = (e) => {
+    const { value, checked } = e.target;
+    const { lvls } = levels;
+
+    if (!checked) {
+      setLevels({
+        lvls: lvls.filter((e) => e !== value),  
+      });
+    }else {
+      setLevels({
+        lvls: [...lvls, value],
+      });
+    }
+  };
+
+  function filterForCheckBoxes(val){
+    if(val.difficulty === difficulties.diffs[0])
+    {
+        if(val.level === levels.lvls[0] || val.level === levels.lvls[1] || val.level === levels.lvls[2])
+      {
+        return val;
       }
-      else if (val.displayname.toLowerCase().includes(searchTerm.toLowerCase())) {
-          return val;
+    }
+    if(val.difficulty === difficulties.diffs[1])
+    {
+        if(val.level === levels.lvls[0] || val.level === levels.lvls[1] || val.level === levels.lvls[2])
+      {
+        return val;
       }
+    }
+
+    if(val.difficulty === difficulties.diffs[2])
+    {
+        if(val.level === levels.lvls[0] || val.level === levels.lvls[1] || val.level === levels.lvls[2])
+      {
+        return val;
+      }
+    }
   }
 
-    useEffect(() => {
-      const fetchProblem = async () => {
-        const requestOptions = {
-            method: "GET",
-        };
-        const data = await fetch(getBackendURL() + '/'+ address, requestOptions);
+  function filterProblems(val) {
+    
+    if (searchTerm === '') {
+      return filterForCheckBoxes(val);
+    }
+    else if (val.displayname.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return filterForCheckBoxes(val);
+    }
+  }
 
-        const problem = await data.json();
-        setProblem(problem);
+  useEffect(() => {
+    const fetchProblem = async () => {
+      const requestOptions = {
+          method: "GET",
       };
-        fetchProblem();
-    }, [address])    
+      const data = await fetch(getBackendURL() + '/'+ address, requestOptions);
+
+      const problem = await data.json();
+      setProblem(problem);
+    };
+      fetchProblem();
+  }, [address])    
 
   return (
+    
     <div className='dashboard'>
       <div className="dashboard_info">
         <div className='dashboard_info_header'> {props.domain} </div>
@@ -49,7 +110,7 @@ function ProblemsPage(props) {
           <div className='horizontal'> <hr/> </div>
           {problem.filter(filterProblems).map((example) => {
             return (
-              <ProblemRow
+              <ProblemRow key={example._id}
                 text={example.displayname}
                 difficulty={example.difficulty}
                 level={example.level}
@@ -67,44 +128,46 @@ function ProblemsPage(props) {
            <div  className='checkbox_options_items'>
             <input className='search__primary' type="text" placeholder="sorularda ara..." onChange={(e) => {setSearchTerm(e.target.value)}}/>
             <h4 className='checkbox_options_header'>zorluk</h4>
-              <Checkbox 
-              id='kolay'
-              value='kolay'
-              name='kolay'
-              text='kolay'/>
 
-              <Checkbox 
-              id='orta'
-              value='orta'
-              name='orta'
-              text='orta'/>
+            <div className='checkbox-container'>
+                <input type="checkbox" id="kolay" name="kolay" defaultChecked={true} value="kolay" onChange={handleDifficulty}/>
+                <span className="checkmark"></span>
+                kolay
+            </div>
 
-              <Checkbox 
-              id='zor'
-              value='zor'
-              name='zor'
-              text='zor'/>
+              <div className='checkbox-container'>
+                <input type="checkbox" id="orta" name="orta" defaultChecked={true} value="orta" onChange={handleDifficulty}/>
+                <span className="checkmark"></span>
+                orta
+            </div>
+
+            <div className='checkbox-container'>
+                <input type="checkbox" id="zor>" name="zor" defaultChecked={true} value="zor" onChange={handleDifficulty}/>
+                <span className="checkmark"></span>
+                zor
+            </div>
 
             <div className='horizontal_short'> <hr/> </div>
 
             <h4 className='checkbox_options_header'>seviye</h4>
-              <Checkbox 
-              id='baslangic'
-              value='baslangic'
-              name='baslangic'
-              text='başlangıç'/>
 
-              <Checkbox 
-              id='orta'
-              value='orta'
-              name='orta'
-              text='orta'/>
+            <div className='checkbox-container'>
+                <input type="checkbox" id="baslangic>" name="baslangic" defaultChecked={true} value="baslangic" onChange={handleLevels}/>
+                <span className="checkmark"></span>
+                başlangıç
+            </div>
 
-              <Checkbox 
-              id='ileri'
-              value='ileri'
-              name='ileri'
-              text='ileri'/>
+            <div className='checkbox-container'>
+                <input type="checkbox" id="ileri>" name="ileri" value="ileri" defaultChecked={true} onChange={handleLevels}/>
+                <span className="checkmark"></span>
+                ileri
+            </div>
+
+            <div className='checkbox-container'>
+                <input type="checkbox" id="uzman>" name="uzman" value="uzman" defaultChecked={true} onChange={handleLevels}/>
+                <span className="checkmark"></span>
+                uzman
+            </div>
             
           </div>
         </div>
