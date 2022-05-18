@@ -15,7 +15,7 @@ function ProblemDescription(props) {
             const requestOptions = {
                 method: "GET",
             };
-            const data = await fetch(getBackendURL() + '/'+paths[1]+'/' + paths[paths.length - 1], requestOptions);
+            const data = await fetch(getBackendURL() + '/' + paths[1] + '/' + paths[paths.length - 1], requestOptions);
             const problem = await data.json();
             setProblem(problem);
         };
@@ -49,7 +49,7 @@ function ProblemDescription(props) {
                     </div>
                 </div>
                 <div className='problem_solution_wrapper'>
-                    <EditorLayout />
+                    <EditorLayout problemName={problem.name} />
                 </div>
             </div>
 

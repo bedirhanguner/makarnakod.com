@@ -20,9 +20,9 @@ const options = [
   { value: "swift", label: "swift" },
 ];
 
-function EditorLayout() {
+function EditorLayout({ problemName }) {
   const [data, setData] = useState({
-    problemId: "fizzbuzz",
+    problemId: problemName,
     code: "",
     language: "python",
   });
@@ -33,7 +33,7 @@ function EditorLayout() {
 
   const editorToLayout = (code, lang) => {
     setData({
-      problemId: "fizzbuzz",
+      problemId: problemName,
       code: code,
       language: lang,
     });
@@ -50,6 +50,11 @@ function EditorLayout() {
 
   const submitClick = () => {
     setRunning(true);
+    setData({
+      problemId: problemName,
+      code: data.code,
+      language: data.language,
+    });
     submitCode(data)
       .then((response) => response.json())
       .then((jsondata) => fillOutput(jsondata));
@@ -94,9 +99,8 @@ function EditorLayout() {
               {codeOutput}
             </div>
             <div
-              className={`loading_animation ${
-                isRunning ? "" : "output_hidden"
-              }`}
+              className={`loading_animation ${isRunning ? "" : "output_hidden"
+                }`}
             >
               <ReactLoading type="bars"></ReactLoading>çalıştırılıyor...
             </div>
