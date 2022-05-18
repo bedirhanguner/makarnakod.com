@@ -29,11 +29,11 @@ function Editor({ userInputReceiver, lang }) {
 
   useEffect(() => {
     userInputReceiver(code, lang);
-  }, [userInputReceiver,lang, code]);
+  }, [lang, code]);
 
   useEffect(() => {
     setCode(languageTemplates[lang]);
-  }, [userInputReceiver, lang]);
+  }, [lang]);
 
   return (
     <AceEditor
