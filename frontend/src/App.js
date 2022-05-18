@@ -8,6 +8,7 @@ import DataStructuresPage from './components/Pages/Problems/DataStructures/DataS
 import FifteenDaysOfPythonPage from './components/Pages/Problems/FifteenDaysOfPython/FifteenDaysOfPythonPage';
 import Login from './components/Pages/UserAuthentication/Login';
 import Register from './components/Pages/UserAuthentication/Register';
+import Profile from './components/Pages/UserAuthentication/Profile';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/veri-yapilari' exact component={DataStructuresPage} />
             <Route path='/giris-yap' exact component={Login} />
             <Route path='/uye-ol' exact component={Register} />
+            <Route path='/profil' exact component={Profile} />
           </Switch>
         </ScrollToTop>
       </Router>

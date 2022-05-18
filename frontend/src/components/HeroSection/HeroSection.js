@@ -6,7 +6,7 @@ import './HeroSection.css';
 function HeroSection() {
   return (
     <div className='hero_container'>
-      <img src='../images/home.png' alt='home'/>
+      <img src='../images/home.png' className ='hero_section' alt='home'/>
       <h1 className='container_header'>makarnakod.com</h1>
       <p className='container_explanation'>kodlamaya başla</p>
       <div className='hero_btns'>

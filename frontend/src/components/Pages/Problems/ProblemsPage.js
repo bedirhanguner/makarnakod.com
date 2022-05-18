@@ -168,7 +168,6 @@ function ProblemsPage(props) {
                 <span className="checkmark"></span>
                 uzman
             </div>
-            
           </div>
         </div>
       </div>

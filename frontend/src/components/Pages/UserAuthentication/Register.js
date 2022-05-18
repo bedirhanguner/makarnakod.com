@@ -46,8 +46,8 @@ function Register() {
     return (
         <>
             <Navbar />
-            <div className='user_auth_main'>
-                <div className='user_auth_wrapper'>
+                <div className='user_auth_main'>
+                    <div className='user_auth_wrapper'>
                     <div className='user_auth_container'>
                         <div className='user_auth_signature'>
                             <div className='user_auth_logo'>

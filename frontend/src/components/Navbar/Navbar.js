@@ -74,42 +74,26 @@ function Navbar() {
               </Link>
             </li>
             {userContext.loggedIn ? (
-            <li>
-              <Link
-                to='/'
-                className='nav_links_mobile'
-                onClick={logOut}
-              >
-                çıkış yap
-              </Link>
-            </li>
+              <>
+                <li><Link to='/profil'className='nav_links_mobile' onClick={closeMobileMenu}>profil</Link></li>
+                <li><Link to='/'className='nav_links_mobile' onClick={logOut}>çıkış yap</Link></li>
+              </>
             ) : (
-            <><li>
-                  <Link
-                    to='/uye-ol'
-                    className='nav_links_mobile'
-                    onClick={closeMobileMenu}
-                  >
-                    üye ol
-                  </Link>
-                </li><li>
-                    <Link
-                      to='/giris-yap'
-                      className='nav_links_mobile'
-                      onClick={closeMobileMenu}
-                    >
-                      giriş yap
-                    </Link>
-                  </li></>
+            <>
+              <li><Link to='/uye-ol'className='nav_links_mobile' onClick={closeMobileMenu}>üye ol</Link></li>
+              <li><Link to='/giris-yap'className='nav_links_mobile' onClick={closeMobileMenu}>giriş yap</Link></li>
+            </>
             )}
           </ul>
         </div>
 
         <div className='nav_btn'>
         {userContext.loggedIn ? (
-              <Link to='/' ><Button onClick={logOut} buttonStyle='btn_outline'>çıkış yap</Button></Link>
-            ) : (
-              <>
+            <>
+              <Link to='/profil' ><Button buttonStyle='btn_outline'>profil</Button></Link>
+              <Link to='/' ><Button onClick={logOut} buttonStyle='btn_primary'>çıkış yap</Button></Link>
+            </>) : (
+            <>
               <Link to='/uye-ol'><Button buttonStyle='btn_outline'>üye ol</Button></Link>
               <Link to='/giris-yap'><Button buttonStyle='btn_primary'>giriş yap</Button></Link>
             </>
