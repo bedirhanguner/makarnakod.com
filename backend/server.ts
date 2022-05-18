@@ -58,6 +58,7 @@ app.post('/submitCode', async (req, res) => {
     let response = await executeCode(
       executionProps.executerPath + ' ' + executionProps.executionOptions
     ); // wait for async exec operation.
+    console.log(response)
     if (!(process.env.KEEP_USER_CODES === 'true')) {
       deleteCodeFile(executionProps.filePath);
     }

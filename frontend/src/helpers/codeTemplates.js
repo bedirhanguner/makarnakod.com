@@ -1,13 +1,8 @@
 let getCodeTemplates = () => {
   return {
-    python: `def uc_bes(n):
-	output = []
-	# kodunuzu buraya yazabilirsiniz.
-	return output`,
+    python: `# kodunuzu buraya yazabilirsiniz.`,
     javascript: `let ucBes = (n) => {
-	let results = [];
-	// kodunuzu buraya yazabilirsiniz.
-	return results;
+	let results = // kodunuzu buraya yazabilirsiniz.
 };
 
 module.exports = {

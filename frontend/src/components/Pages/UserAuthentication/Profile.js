@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React from "react"
 import Navbar from '../../Navbar/Navbar';
 import './UserAuthentication.css'
 
@@ -11,7 +11,7 @@ function Profile() {
                     <div className='user_profile_container'>
                         <div className="user_profile">
                             <div className='user_profile_left'>
-                                <img className ='user_pic'src="https://cutewallpaper.org/22/meme-profile-picture-wallpapers/76516251.jpg"></img>
+                                <img className ='user_pic'src="https://cutewallpaper.org/22/meme-profile-picture-wallpapers/76516251.jpg" alt="pp"></img>
                             </div>
                             <div className='user_profile_right'>
                                 <p className='user_name'> Alberen Pirol </p>
