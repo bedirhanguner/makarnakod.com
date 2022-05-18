@@ -14,8 +14,13 @@ function testFunction(budu: string) {
   console.log('bidi', budu);
 }
 
-type ExecuteResultType = { hasErrors: boolean; output: CodeExecuteResult | null | string };
-export function executeCode(executeCommand: string): Promise<ExecuteResultType> {
+type ExecuteResultType = {
+  hasErrors: boolean;
+  output: CodeExecuteResult | null | string;
+};
+export function executeCode(
+  executeCommand: string
+): Promise<ExecuteResultType> {
   let response: ExecuteResultType = { hasErrors: false, output: null };
 
   return new Promise((resolve) => {

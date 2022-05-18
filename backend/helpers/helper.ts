@@ -1,5 +1,9 @@
 import { createExecuteOptions } from './codeExecuter';
-import { createFilePath, getExecuterFilePath, getProblemFilesPath } from './fileOps';
+import {
+  createFilePath,
+  getExecuterFilePath,
+  getProblemFilesPath,
+} from './fileOps';
 
 export let extensionOf: { [key: string]: string } = {
   python: 'py',
@@ -23,7 +27,11 @@ export function prepareUserCodeExecute(
 ): CodeExecuteProps {
   let executionProps: CodeExecuteProps = {
     filePath: createFilePath(ip, submittedCodesFolder),
-    problemFilesPath: getProblemFilesPath(language, problemId, codeExecuterFolder),
+    problemFilesPath: getProblemFilesPath(
+      language,
+      problemId,
+      codeExecuterFolder
+    ),
     executerPath: getExecuterFilePath(language, codeExecuterFolder),
     executionOptions: '',
   };
@@ -46,7 +54,11 @@ export type CodeExecuteResult = {
 export function parseErrorMessage(error: string): string {
   let message = error;
   if (error.includes('<Error>')) {
-    message = error.split(/<Error>(.*)<\/Error>/).find((e) => e.startsWith('{')) || error; // kinda jank but it should work. Trying to get this <Error>{'FailedCase': {'TestNo': 1, 'TestCase': 1}, 'ErrorType': 'lenDifference', 'InnerError': {'LengthOfKnownCorrect': 1, 'LengthOfUserSubmitted': 0}}</Error> part
+    console.log(error);
+
+    message =
+      error.split(/<Error>(.*)<\/Error>/).find((e) => e.startsWith('{')) ||
+      error; // kinda jank but it should work. Trying to get this <Error>{'FailedCase': {'TestNo': 1, 'TestCase': 1}, 'ErrorType': 'lenDifference', 'InnerError': {'LengthOfKnownCorrect': 1, 'LengthOfUserSubmitted': 0}}</Error> part
     console.log(JSON.parse(JSON.stringify(message)));
   }
   return message;
