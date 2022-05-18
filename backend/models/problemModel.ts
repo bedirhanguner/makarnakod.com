@@ -21,4 +21,7 @@ const problemSchema = new Schema<Iproblem>({
   acceptance: {type: Number}
 });
 
-export const Problem = model<Iproblem>('algorithm_problems', problemSchema);
+export const AlgorithmProblems = model<Iproblem>('algorithm_problems', problemSchema);
+export const DataStructureProblems = model<Iproblem>('data_structure_problems', problemSchema);
+export const FunctionalProgrammingProblems = model<Iproblem>('functional_programming_problems', problemSchema);
+export const DatabaseProblems = model<Iproblem>('database_problems', problemSchema);
