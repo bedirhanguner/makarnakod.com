@@ -3,16 +3,16 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function DatabasePage() {
+function DataStructures() {
     return (
         <>
             <Navbar />
             <ProblemsPage 
-                domain='betik'
-                address='betik'
+                domain='veri yapıları'
+                address='veri-yapilari'
             />
         </>
     );
 }
 
-export default DatabasePage;
+export default DataStructures;

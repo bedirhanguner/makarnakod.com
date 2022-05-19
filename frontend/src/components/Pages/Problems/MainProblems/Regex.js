@@ -3,16 +3,16 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function DataStructuresPage() {
+function Regex() {
     return (
         <>
             <Navbar />
             <ProblemsPage 
-                domain='veri yapıları'
-                address='veri-yapilari'
+                domain='regex'
+                address='regex'
             />
         </>
     );
 }
 
-export default DataStructuresPage;
+export default Regex;

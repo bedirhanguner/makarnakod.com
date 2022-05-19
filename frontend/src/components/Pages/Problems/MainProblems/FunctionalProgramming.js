@@ -3,16 +3,16 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function AlgorithmPage() {
+function FunctionalProgramming() {
     return (
         <>
             <Navbar />
             <ProblemsPage 
-                domain='algoritma'
-                address='algoritma'
+                domain='fonksiyonel programlama'
+                address='fonksiyonel-programlama'
             />
         </>
     );
 }
 
-export default AlgorithmPage;
+export default FunctionalProgramming;

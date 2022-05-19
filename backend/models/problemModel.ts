@@ -25,3 +25,6 @@ export const AlgorithmProblems = model<Iproblem>('algorithm_problems', problemSc
 export const DataStructureProblems = model<Iproblem>('data_structure_problems', problemSchema);
 export const FunctionalProgrammingProblems = model<Iproblem>('functional_programming_problems', problemSchema);
 export const DatabaseProblems = model<Iproblem>('database_problems', problemSchema);
+export const RegexProblems = model<Iproblem>('regex_problems', problemSchema);
+export const ShellProblems = model<Iproblem>('shell_problems', problemSchema);
+export const PythonProblems = model<Iproblem>('python_problems', problemSchema);

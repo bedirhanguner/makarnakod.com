@@ -3,16 +3,16 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function FunctionalProgrammingPage() {
+function Shell() {
     return (
         <>
             <Navbar />
             <ProblemsPage 
-                domain='fonksiyonel programlama'
-                address='fonksiyonel-programlama'
+                domain='kabuk'
+                address='kabuk'
             />
         </>
     );
 }
 
-export default FunctionalProgrammingPage;
+export default Shell;
