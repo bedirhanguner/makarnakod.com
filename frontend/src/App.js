@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Pages/Home/Home';
-import ProblemsPage from './components/Pages/Problems/ProblemsPage';
+import ProblemsPage from './components/Pages/Problems/ProblemDescription';
 import Algorithm from './components/Pages/Problems/MainProblems/Algorithm';
 import Database from './components/Pages/Problems/MainProblems/Database';
 import DataStructures from './components/Pages/Problems/MainProblems/DataStructures';
