@@ -5,6 +5,7 @@ import { Router } from 'express';
 import { UserAuthModel, UserModel } from '../models/userModel';
 import { getUserByEmail } from '../userAuths/findUser';
 import { createUser } from '../userAuths/createUser';
+import { updateUserProfile } from '../userAuths/updateUser';
 
 export const UsersRouter = Router();
 
@@ -19,8 +20,10 @@ UsersRouter.post('/register', async (req, res) => {
   });
 
   let user = new UserModel({
+    UserName: (req.body.firstName + req.body.lastName).toLowerCase(),
     FirstName: req.body.firstName,
     LastName: req.body.lastName,
+    About: '',
   });
 
   // Check if user already exists
@@ -79,4 +82,27 @@ UsersRouter.get('/current', (req, res) => {
 UsersRouter.post('/logout', (req, res) => {
   req.logout();
   res.status(200).send('Logged out');
+});
+
+UsersRouter.get('/profile', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.status(200).send(req.user);
+  } else {
+    res.status(404).send({ message: 'Not logged in' });
+  }
+});
+
+//updateProfile
+UsersRouter.post('/updateProfile', (req, res) => {
+  let user = new UserModel({
+    UserName: req.body.userName.toLowerCase(),
+    FirstName: req.body.firstName,
+    LastName: req.body.lastName,
+    About: req.body.about,
+    // ProfilePictureURL: req.body.profilePictureURL,
+  });
+
+  updateUserProfile(user, req.body.email);
+
+  res.send('User updated');
 });

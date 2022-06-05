@@ -10,8 +10,10 @@ export interface IUserAuth {
 
 export interface IUser {
   _id?: ObjectId;
+  UserName: string;
   FirstName: string;
   LastName: string;
+  About: string;
   BirthDate: Date;
   ProfilePictureURL: string;
   AuthId: ObjectId;
@@ -24,8 +26,10 @@ const userAuthSchema = new Schema<IUserAuth>({
 });
 
 const UserSchema = new Schema<IUser>({
+  UserName: { type: String, required: true },
   FirstName: { type: String, required: true },
   LastName: { type: String, required: true },
+  About: { type: String },
   BirthDate: { type: Date },
   ProfilePictureURL: { type: String },
   AuthId: { type: SchemaTypes.ObjectId, required: true },
