@@ -9,6 +9,7 @@ import FifteenDaysOfPythonPage from './components/Pages/Problems/FifteenDaysOfPy
 import Login from './components/Pages/UserAuthentication/Login';
 import Register from './components/Pages/UserAuthentication/Register';
 import Profile from './components/Pages/UserAuthentication/Profile';
+import EditProfile from './components/Pages/UserAuthentication/EditProfile';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
       <Router>
         <ScrollToTop>
           <Switch>
+            <Route path='/profil/guncelle' exact component={EditProfile} />
             <Route path='/' exact component={Home} />
             <Route path='/:path/:path' exact component={ProblemPage} />
-            <Route path='/15-gunde-python-kiti' exact component={FifteenDaysOfPythonPage}/>
+            <Route path='/15-gunde-python-kiti' exact component={FifteenDaysOfPythonPage} />
             <Route path='/algoritma' exact component={AlgorithmPage} />
             <Route path='/veri-yapilari' exact component={DataStructuresPage} />
             <Route path='/giris-yap' exact component={Login} />

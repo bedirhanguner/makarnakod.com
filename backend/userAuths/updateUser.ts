@@ -12,7 +12,7 @@ export async function updateUserProfile(
   }; //default message
   const auth = await UserAuthModel.findOne({ email: UserEmail });
   if (auth == null) {
-    response = { code: 404, message: 'User not found' };
+    response = { code: 404, message: 'UserAuth not found' };
     return response;
   }
   const user = await UserModel.findOne({ AuthId: auth._id });
@@ -27,7 +27,17 @@ export async function updateUserProfile(
   user.About = UserInfo.About;
   user.ProfilePictureURL = UserInfo.ProfilePictureURL;
 
-  response = { code: 200, message: 'User updated' };
+  let _ = await user
+    .save()
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    })
+    .then((user) => {
+      if (user) {
+        response = { code: 200, message: 'User updated' };
+      }
+    });
 
   return response;
 }

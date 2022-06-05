@@ -74,7 +74,7 @@ UsersRouter.get('/current', (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).send({ email: user.email, user: user.userInfo });
   } else {
-    res.status(404).send({ message: 'Not logged in' });
+    res.status(403).send({ message: 'Not logged in' });
   }
 });
 
@@ -88,12 +88,14 @@ UsersRouter.get('/profile', (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).send(req.user);
   } else {
-    res.status(404).send({ message: 'Not logged in' });
+    res.status(403).send({ message: 'Not logged in' });
   }
 });
 
 //updateProfile
-UsersRouter.post('/updateProfile', (req, res) => {
+UsersRouter.post('/updateProfile', async (req, res) => {
+  let currUser: User = req.user as User;
+
   let user = new UserModel({
     UserName: req.body.userName.toLowerCase(),
     FirstName: req.body.firstName,
@@ -102,7 +104,11 @@ UsersRouter.post('/updateProfile', (req, res) => {
     // ProfilePictureURL: req.body.profilePictureURL,
   });
 
-  updateUserProfile(user, req.body.email);
+  let response = await updateUserProfile(user, currUser.email);
 
-  res.send('User updated');
+  if (response.code === 200) {
+    res.status(200).send({ message: 'User updated' });
+  } else {
+    res.status(response.code).send({ message: response.message });
+  }
 });

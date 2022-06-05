@@ -41,8 +41,10 @@ export function initializePassport() {
     return done(null, {
       email: userAuth?.toObject().email,
       userInfo: {
+        UserName: userObject.UserName,
         FirstName: userObject.FirstName,
         LastName: userObject.LastName,
+        About: userObject.About,
         BirthDate: userObject.BirthDate,
         ProfilePictureURL: userObject.ProfilePictureURL,
       },
