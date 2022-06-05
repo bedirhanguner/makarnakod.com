@@ -56,10 +56,7 @@ export function parseErrorMessage(error: string): string {
   if (error.includes('<Error>')) {
     console.log(error);
 
-    message =
-      error.split(/<Error>(.*)<\/Error>/).find((e) => e.startsWith('{')) ||
-      error; // kinda jank but it should work. Trying to get this <Error>{'FailedCase': {'TestNo': 1, 'TestCase': 1}, 'ErrorType': 'lenDifference', 'InnerError': {'LengthOfKnownCorrect': 1, 'LengthOfUserSubmitted': 0}}</Error> part
-    console.log(JSON.parse(JSON.stringify(message)));
+    message = error.split('<Error>{')[1].split('}</Error>')[0];
   }
   return message;
 }

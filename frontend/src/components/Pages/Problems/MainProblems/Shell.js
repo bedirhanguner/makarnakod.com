@@ -3,16 +3,16 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function AlgorithmPage() {
+function Shell() {
     return (
         <>
             <Navbar />
             <ProblemsPage 
-                domain='algoritma'
-                address='algoritma'
+                domain='kabuk'
+                address='kabuk'
             />
         </>
     );
 }
 
-export default AlgorithmPage;
+export default Shell;

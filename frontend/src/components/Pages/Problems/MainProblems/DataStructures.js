@@ -3,7 +3,7 @@ import '../../../../App.css';
 import Navbar from '../../../Navbar/Navbar';
 import ProblemsPage from '../ProblemsPage';
 
-function DataStructuresPage() {
+function DataStructures() {
     return (
         <>
             <Navbar />
@@ -15,4 +15,4 @@ function DataStructuresPage() {
     );
 }
 
-export default DataStructuresPage;
+export default DataStructures;

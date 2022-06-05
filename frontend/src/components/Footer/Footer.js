@@ -33,7 +33,7 @@ function Footer() {
           </div>
           <div className='footer_link_items'>
             <h2>iletişim</h2>
-            <Link to='/'>biizmle iletişime geçin</Link>
+            <Link to='/'>bizimle iletişime geçin</Link>
             <Link to='/'>destek</Link>
             <Link to='/'>sponsorluklar</Link>
           </div>
@@ -53,10 +53,10 @@ function Footer() {
           <div className='footer_logo'>
             <Link to='/' className='social_logo'>
                 makarnakod
-                <i className="fas fa-fingerprint"/>
+                <i className="fas fa-pastafarianism"/>
             </Link>
           </div>
-          <small className='website_rights'>makarnakod © 2021</small>
+          <small className='website_rights'>makarnakod © 2022</small>
           <div className='social_icons'>
             <Link
               className='social_icon_link facebook'

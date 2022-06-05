@@ -34,9 +34,9 @@ function Dashboard() {
                 rate='0/30 tanesi tamamlandı'
                 />
                 <Questions
-                text='betik'
-                path='/betik'
-                rate='0/27 tanesi tamamlandı'
+                text='regex'
+                path='/regex'
+                rate='0/18 tanesi tamamlandı'
                 />
                 <Questions
                 text='veritabanı'
@@ -44,9 +44,9 @@ function Dashboard() {
                 rate='0/35 tanesi tamamlandı'
                 />
                 <Questions
-                text='regex'
-                path='/regex'
-                rate='0/18 tanesi tamamlandı'
+                text='kabuk'
+                path='/kabuk'
+                rate='0/27 tanesi tamamlandı'
                 />
             </div>
         </div>
@@ -90,7 +90,7 @@ function Dashboard() {
                   kendinizi geliştirin
                 </div>
               <div className='kit_subjects_display'>
-                <Link className='kit_items' to='/mulakat-hazırlanma-kiti'>
+                <Link className='kit_items' to='/mulakat-hazirlanma-kiti'>
                     <div className='kit_items_header'>
                         mülakat hazırlanma kiti
                     </div>
