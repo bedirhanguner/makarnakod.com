@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react"
 import Navbar from '../../Navbar/Navbar';
 import './UserAuthentication.css'
 import getBackendURL from '../../../helpers/getURL.js';
+import { Link } from 'react-router-dom';
 
 function Profile() {
     const [profile, setProfile] = useState({
@@ -50,9 +51,11 @@ function Profile() {
                         <p className='user_bio'> {profile.about} </p>
                         {/* <p className='user_stat'> Problems Solved: 10/100 </p> */}
                         <div className="user_profile">
-                            <div className='user_profile_update'>
-                                <input className='user_update_button' type="submit" value="profili güncelle" />
-                            </div>
+                            <Link to='/profil/guncelle'>
+                                <div className='user_profile_update'>
+                                    <input className='user_update_button' type="submit" value="profili güncelle" />
+                                </div>
+                            </Link>
                             <div className='user_pass_update'>
                                 <input className='user_update_button' type="submit" value="şifreyi güncelle" />
                             </div>
